@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Бүртгүүлэх{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <section class="animatedbg dark-bg text-center" data-bg-img="global_assets/images/pattern/01.png">
+        <div class="container">
+
+        </div>
+    </section>
+
+    <!--body content start-->
+
+    <div id="main-page" class="page-content">
+
+        <!--contact start-->
+
+        <section>
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col text-center">
+                        <div class="section-title">
+
+                            <h2 class="title">Хѳтѳлбѳрт <span>Бүртгүүлэх</span></h2>
+                            <p>Сургалтын элсэлт үргэлжилж байна.</p>
+                        </div>
+                        <div class="contact-main">
+
+                            {% if msg is defined and status != '' %}
+                                <div class="alert {{ status == 'success' ? 'alert-success':'alert-danger' }}" role="alert">{{ msg }}</div>
+                            {% endif %}
+
+                            {{ form_start(form, {'attr': {'class':'row'}}) }}
+                                <div class="messages"></div>
+                                <div class="form-group col-md-6"><div class="help-block with-errors">{{ form_errors(form.lastname) }}</div>
+                                    {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Овог', 'required': true}}) }}
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    {{ form_widget(form.firstname, { 'attr': {'class': 'form-control', 'placeholder': 'Нэр', 'required': true} }) }}
+                                    <div class="help-block with-errors">{{ form_errors(form.firstname) }}</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Цахим шуудангийн хаяг', 'type': 'email', 'required': true} }) }}
+                                    <div class="help-block with-errors">{{ form_errors(form.email) }}</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    {{ form_widget(form.phone, {'attr': {'class': 'form-control','type': 'number', 'minlength': 8, 'maxlength':8, 'placeholder': 'Утасны дугаар ', 'required': true}}) }}
+                                    <div class="help-block with-errors">{{ form_errors(form.phone) }}</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    {{ form_widget(form.type, { 'attr': {'class': 'form-control form-select', 'rows': 4, 'required': true} }) }}
+                                    <div class="help-block with-errors">{{ form_errors(form.type) }}</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    {{ form_widget(form.comment, { 'attr': {'class': 'form-control', 'rows': 4, 'placeholder': 'Санал хүсэлт', 'required': true} }) }}
+                                    <div class="help-block with-errors">{{ form_errors(form.comment) }}</div>
+                                </div>
+                                <div class="col-md-12 mt-4">
+                                    <button type="submit" class="btn btn-theme"><span>Илгээх <i class="far fa-paper-plane ms-2"></i></span>
+                                    </button>
+                                </div>
+                            {{ form_errors(form) }}
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 g-0">
+                    <div class="col-md-5">
+                        <div class="dark-bg px-5 py-8 contact-info position-relative"> <i class="flaticon-support"></i>
+                            <div class="contact-media mb-4"> <i class="flaticon-location"></i>
+                                <h6>Хаяг:</h6>
+                                <span>Монгол улс, Улаанбаатар хот, Баянзүрх дүүрэг, 1-р хороо, Энхтайваны өргөн чөлөө-5, 13381, Ш/H: Улаанбаатар-49,</span>
+                            </div>
+                            <div class="contact-media mb-4"> <i class="flaticon-email"></i>
+                                <h6>Имэйл:</h6>
+                                <a href="mailto:admin@ioi.mn"> admin@ioi.mn</a>
+                            </div>
+                            <div class="contact-media"> <i class="flaticon-support-1"></i>
+                                <h6>Call Us</h6>
+                                <a href="tel:+976 7015 8820">+976 7015 8820</a>
+                                <a href="tel:+976 8985 0436">+976 8985 0436</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="map h-100">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.91961732432!2d106.92886061559571!3d47.91859277920651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693e4925e7375%3A0xb1ff61e95c6f21d3!2z0JDQuSDTqNKvINCY0L3RgdGC0LjRgtGD0YIgLyBJTyBJbnN0aXR1dGU!5e0!3m2!1sen!2smn!4v1652675933373!5m2!1sen!2smn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--contact end-->
+
+    </div>
+
+    <!--body content end-->
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {% include 'inc/flashmsg.html.twig' %}
+{% endblock %}

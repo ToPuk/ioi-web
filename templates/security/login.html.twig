@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Нэвтрэх{% endblock %}
+{% block header %}{% endblock %}
+{% block body %}
+
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content d-flex justify-content-center align-items-center">
+
+                <!-- Login form -->
+                <form class="login-form" method="post" action="{{ path('login') }}">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                                <h5 class="mb-0">Сонгон шалгаруулалт</h5>
+                                <span class="d-block text-muted">Нэвтрэх мэдээллээ оруулна уу</span>
+                            </div>
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="И-мэйл хаяг" required autofocus>
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Нууц үг" required>
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            >
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Нэвтрэх <i class="icon-circle-right2 ml-2"></i></button>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="{{ path('app_forgot_password_request') }}">Мартсан?</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- /login form -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+
+
+
+{% endblock %}
+{% block footer %}{% endblock %}

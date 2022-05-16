@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Хэрэглэгчид{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <div class="page-header-content container header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Хэрэглэгчид</span></h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+
+            <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">
+                <div class="breadcrumb">
+                    <a href="{{ path('default_index') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Нүүр</a>
+                    <span class="breadcrumb-item active">Хэрэглэгчид</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="page-content container pt-0">
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-body">
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <a class="btn btn-primary mb-3" href="{{ path('user_new') }}">Хэрэглэгч нэмэх</a>
+                {% endif %}
+
+                <table id="licenseTable" class="table">
+                    <thead>
+                    <tr>
+                        <th>Нэр</th>
+                        <th>Овог</th>
+                        <th>И-мэйл</th>
+                        <th>И-мэйл баталгаажуулалт</th>
+                        <th>Утасны дугаар</th>
+                        <th>Хэрэглэгчийн төрөл</th>
+                        <th>Байгууллага</th>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <th>#</th>
+                        {% endif %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.isVerified ? '<span class="badge badge-success">Баталгаажсан</span>':'<span class="badge badge-danger">Баталгаажаагүй</span>' }}</td>
+                            <td>{{ user.phoneNumber ? user.phoneNumber : '' }}</td>
+                            <td>
+                                {% if user.roles %}
+                                    {% if 'ROLE_HOSPITAL' in user.roles|json_encode %}
+                                        Эмнэлэгийн хэрэглэгч
+                                    {% elseif 'ROLE_ADMIN' in user.roles|json_encode %}
+                                        ЭМД хэрэглэгч
+                                    {% else %}
+                                        ЭМД дарга
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td>{{ user.hospital ? user.hospital.name : 'ЭМД' }}</td>
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <td>
+                                <a href="{{ path('user_edit',{'id':user.id}) }}" class="btn btn-sm btn-primary"><icon class="icon-pen6"></icon></a>
+                            </td>
+                            {% endif %}
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="8">Мэдээлэл хоосон байна</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+
+        $('#licenseTable').DataTable({
+            language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Mongolian.json",
+                paginate: {'next': '→', 'previous': '←' }
+            },
+        });
+
+    </script>
+{% endblock %}

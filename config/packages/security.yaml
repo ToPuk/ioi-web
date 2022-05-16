@@ -1,0 +1,66 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            lazy: true
+            provider: app_user_provider
+            form_login:
+                login_path: login
+                check_path: login
+                always_use_default_target_path: true
+                default_target_path: hospital_index
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/announcement/new, roles: ROLE_USER }
+        - { path: ^/legal/info/new, roles: ROLE_USER }
+        - { path: ^/announcement/create_user, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/announcement, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/check_email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/legal/info, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/hospital/bed-tushaal, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tender, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/verify/email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/request/general/new, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/request/general/result, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/request/general, roles: ROLE_USER }
+        - { path: ^/main/diagnose/type, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/guide, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/reset-password, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(.+), roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/activity/log, roles: ROLE_ADMIN}
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN

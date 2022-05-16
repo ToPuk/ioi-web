@@ -1,0 +1,49 @@
+{{ form_start(form) }}
+    <div class="form-group">
+        <label>Хэрэглэгчийн нэр:</label>
+        {{ form_widget(form.firstName, { 'attr': {'class': 'form-control', 'placeholder': 'Нэр'} }) }}
+        <div class="text-warning">
+        {{ form_errors(form.firstName) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Хэрэглэгчийн Овог:</label>
+        {{ form_widget(form.lastName, { 'attr': {'class': 'form-control', 'placeholder': 'Овог'} }) }}
+        <div class="text-warning">
+        {{ form_errors(form.lastName) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Цахим шуудангийн хаяг:</label>
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email'} }) }}
+        <div class="text-warning">
+        {{ form_errors(form.email) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Роль:</label>
+        {{ form_widget(form.role, { 'attr': {'class': 'form-control'}}) }}
+        <div class="text-warning">
+        {{ form_errors(form.role, { 'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Цахим шуудан баталгаажуулалт:</label>
+        {{ form_widget(form.isVerified) }}
+        <div class="text-warning">
+        {{ form_errors(form.isVerified) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Нууц үг:</label>
+        {{ form_widget(form.password, { 'attr': {'class': 'form-control', 'placeholder': 'Нууц үг'} }) }}
+        <div class="text-warning">
+        {{ form_errors(form.password) }}
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Хадгалах</button>
+{{ form_end(form) }}

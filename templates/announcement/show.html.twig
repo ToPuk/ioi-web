@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Announcement{% endblock %}
+
+{% block body %}
+<div class="page-content container pt-0">
+    <div class="content-wrapper">
+
+        {% if app.user %}
+            {% if not is_granted('ROLE_HOSPITAL') and is_granted('ROLE_USER') %}
+                <div class="mb-3">
+                    <a href="{{ path('announcement_edit', {'id': announcement.id}) }}">Засах</a>
+
+                    {{ include('announcement/_delete_form.html.twig') }}
+                </div>
+            {% endif %}
+        {% endif %}
+    <!-- Page header -->
+        <div class="page-header">
+            <div class="page-header-content container header-elements-md-inline">
+                <div class="page-title d-flex">
+                    <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Мэдээ мэдээлэл</span></h4>
+                    <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                </div>
+
+                <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">
+                    <div class="breadcrumb">
+                        <a href="{{ path('default_index') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Нүүр</a>
+                        <span class="breadcrumb-item active">Мэдээлэл</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-top-blue">
+            <div class="card-body">
+                <div class="mb-4 border-bottom">
+                    <h4 class="font-weight-semibold mb-1">
+                        <a href="#" class="text-default">{{ announcement.title }}</a>
+                    </h4>
+
+                    <ul class="list-inline list-inline-dotted text-muted mb-3">
+                        <li class="list-inline-item">{{ announcement.releaseDate ? announcement.releaseDate|date('Y-m-d') : '' }}</li>
+                    </ul>
+
+                </div>
+                <div class="mb-4">
+                    {{ announcement.bodyHtml | raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

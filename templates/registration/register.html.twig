@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Бүртгүүлэх{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <div class="page-header">
+        <div class="page-header-content container header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Хэрэглэгчийн Бүртгэл</span></h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+
+            <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Нүүр</a>
+                    <span class="breadcrumb-item active">Сонгон шалгаруулалт</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page-content container pt-0">
+        <div class="content-wrapper">
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="alert alert-danger alert-styled-left alert-arrow-left">
+                        <span class="font-weight-semibold">Анхааруулга:</span><span> Энэхүү бүртгэлийн хэсэгт оруулах цахим шуудангийн хаяг /и-мэйл хаяг/, холбоо барих утасны дугаар нь цаашид энэхүү системд нэвтрэх, сонгон шалгаруулалт, гэрээлэлтийн асуудлаар тус байгууллагатай холбогдоход ашиглагдах тул байгууллагын албан ёсны цахим шуудангийн хаяг,  төлөөлөх эрх бүхий албан тушаалтны овог нэр, албан тушаал, утасны дугаарыг оруулна уу.</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ form_start(registrationForm) }}
+                    <fieldset class="mb-3">
+                        <legend class="text-uppercase font-size-sm font-weight-bold text-blue">Эмнэлгийн мэдээлэл</legend>
+                        <div class="form-group">
+                            <label>Улсын бүртгэлийн гэрчилгээний регистрийн дугаар:</label>
+                            {{ form_widget(registrationForm.embRegNum, {'attr': {'class': 'form-control', 'minlength': 7, 'type': 'number', 'maxlength':7, 'required': true, 'placeholder': '7 оронтой тоо'}}) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.embRegNum,{ 'attr': {'class': 'text-red'} }) }}
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(registrationForm.emb, {'attr': {'class': 'form-control'}}) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.emb) }}
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mb-3">
+                        <legend class="text-uppercase font-size-sm font-weight-bold text-blue">ЭРХ БҮХИЙ АЛБАН ТУШААЛТАН</legend>
+
+                        <div class="form-group">
+                            <label>Овог:</label>
+                            {{ form_widget(registrationForm.lastName, { 'attr': {'class': 'form-control', 'placeholder': 'Овог','required':true} }) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.lastName) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Нэр:</label>
+                            {{ form_widget(registrationForm.firstName, { 'attr': {'class': 'form-control', 'placeholder': 'Нэр'} }) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.firstName) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Албан тушаал:</label>
+                            {{ form_widget(registrationForm.status, { 'attr': {'class': 'form-control', 'placeholder': 'Албан тушаал','required':true} }) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.status) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Цахим шуудан:</label>
+                            {{ form_widget(registrationForm.email, { 'attr': {'class': 'form-control', 'placeholder': 'Цахим шуудангийн хаяг', 'type': 'email'} }) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.email) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Утасны дугаар:</label>
+                            {{ form_widget(registrationForm.phoneNumber, { 'attr': {'class': 'form-control', 'placeholder': 'Утасны дугаар', 'type': 'tel', 'pattern':'[0-9]{8}', 'minlength': 8,'maxlength':8, 'required':true} }) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.phoneNumber) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Нууц үг:</label>
+                            {{ form_widget(registrationForm.plainPassword, { 'attr': {'class': 'form-control', 'placeholder': 'Нууц үг'} }) }}
+                            <div class="text-warning">
+                            {{ form_errors(registrationForm.plainPassword) }}
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label>Дээрх мэдээллийг үнэн зөв бөглөсөн болно:</label>
+                            {{ form_widget(registrationForm.agreeTerms) }}
+                        </div>
+                    </fieldset>
+{#                    {{ form_row(registrationForm.agreeTerms) }}#}
+
+                    <button type="submit" class="btn btn-primary">Бүртгүүлэх</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {% include 'inc/flashmsg.html.twig' %}
+    <script>
+        $(document).ready( function () {
+            {% if alert is defined and alert != null %}
+            $(function(){
+                new PNotify({
+                    title: 'Алдаа гарлаа',
+                    text: '{{ alert }}'
+                });
+            });
+            {% endif %}
+        });
+
+        var loader = $('.preloader');
+
+        var $emb = $('#registration_form_embRegNum');
+        $emb.change(function() {
+            loader.show();
+
+            var $form = $(this).closest('form');
+            var data = {};
+
+            data[$emb.attr('name')] = $emb.val();
+
+            $.ajax({
+                url : $form.attr('action'),
+                type: $form.attr('method'),
+                data : data,
+                success: function(html) {
+                    $('#registration_form_emb').replaceWith(
+                        $(html).find('#registration_form_emb')
+                    );
+                },
+                complete: function() {
+                    loader.hide();
+                }
+            });
+        });
+
+    </script>
+{% endblock %}

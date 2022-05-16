@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Нууц үг шинэчлэх{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content d-flex justify-content-center align-items-center">
+
+                <div class="card">
+
+                    <div class="card-header bg-white">
+                        <h3 class="fa-underline">Нууц Үг Шинэчлэх</h3>
+                    </div>
+
+
+                    <div class="card-body">
+                        {% for flashError in app.flashes('reset_password_error') %}
+                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                        {% endfor %}
+
+
+                        {{ form_start(requestForm) }}
+                        <div class="form-group">
+                            <label>Таны и-мэйл хаяг:</label>
+                            {{ form_widget(requestForm.email, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+                        <button class="btn btn-primary">{{ button_label|default('Хүсэлт илгээх') }}</button>
+                        {{ form_end(requestForm) }}
+                    </div>
+
+                    <div class="card-footer">
+                        Таны бүртгэлтэй и-мэйл-рүү бид нууц үг шинэчлэх холбоос илгээх болно.
+                    </div>
+                </div>
+
+
+
+
+{#                <!-- Login form -->#}
+{#                <form class="login-form" name="reset_password_request_form" method="post" action="{{ path('login') }}">#}
+{#                    <div class="card mb-0">#}
+{#                        <div class="card-body">#}
+{#                            <div class="text-center mb-3">#}
+{#                                <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>#}
+{#                                <h5 class="mb-0">Сонгон шалгаруулалт</h5>#}
+{#                                <span class="d-block text-muted">Та нууц үгээ мартсан уу</span>#}
+{#                            </div>#}
+
+{#                            <div class="form-group form-group-feedback form-group-feedback-left">#}
+{#                                <input type="email" value="{{ email }}" name="email" id="reset_password_request_form_email" class="form-control" placeholder="И-мэйл хаяг" required autofocus>#}
+{#                                <div class="form-control-feedback">#}
+{#                                    <i class="icon-user text-muted"></i>#}
+{#                                </div>#}
+{#                            </div>#}
+
+{#                            <input type="hidden" name="reset_password_request_form[_token]"#}
+{#                                   value="{{ csrf_token('authenticate') }}"#}
+{#                            >#}
+{#                            <div class="form-group">#}
+{#                                <button type="submit" class="btn btn-primary btn-block">И-мэйл илгээх <i class="icon-circle-right2 ml-2"></i></button>#}
+{#                            </div>#}
+
+{#                        </div>#}
+{#                    </div>#}
+{#                </form>#}
+
+                <!-- /login form -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% for key,msgs in app.session.flashBag.all %}
+    {% for msg in msgs %}
+        <script>
+        $(function(){
+            new PNotify({
+            title: '{{ msg }}',
+            type: '{{ key }}',
+            delay: 4000,
+            cornerclass: 'bg-{{ key }}'
+            });
+        });
+        </script>
+    {% endfor %}
+{% endfor %}

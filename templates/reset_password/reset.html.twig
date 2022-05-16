@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Шинэ нууц үг үүсгэх{% endblock %}
+
+{% block body %}
+
+<div class="page-content">
+    <!-- Main content -->
+    <div class="content-wrapper">
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+            <div class="card mb-0">
+                <div class="card-body">
+
+                    <div class="text-center mb-3">
+                        <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                        <h5 class="mb-0">Нууц үг шинэчлэх</h5>
+                    </div>
+
+                    {{ form_start(resetForm) }}
+                    {% set i = 0 %}
+                    {% for passwordField in resetForm.plainPassword %}
+                        <div class="form-group">
+                            {% if i == 0 %}
+                                <label>Шинэ Нууц Үг</label>
+                                {% set i = 1 %}
+                            {% else %}
+                                <label>Шинэ Нууц Үг (давтах)</label>
+                            {% endif %}
+                            {{ form_widget(passwordField, { 'attr': {'class': 'form-control'} }) }}
+                            <div class="form-error">
+                                {{ form_errors(passwordField) }}
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                    <button class="btn btn-primary">Шинэчлэх</button>
+                    {{ form_end(resetForm) }}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

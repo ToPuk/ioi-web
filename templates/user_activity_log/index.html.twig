@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Хэрэглэгчийн үйлдлийн түүх{% endblock %}
+
+{% block body %}
+<p></p>
+<div class="page-header">
+    <div class="page-header-content container header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Хэрэглэгчийн үйлдлийн түүх</span></h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<div class="page-content container pt-0">
+    <div class="content-wrapper">
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive" style="border-top: none">
+                    <table id="activity_log_table" class="table table-striped" style="border-top: none">
+                        <thead>
+                            <tr>
+                                <th>Төрөл</th>
+                                <th>Өөрчилөлт</th>
+                                <th>Огноо</th>
+                                <th>Хэрэглэгчийн ID</th>
+                                <th>Имэйл</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for user_activity_log in user_activity_logs %}
+                            <tr>
+                                <td>{{ user_activity_log.activityType }}</td>
+                                <td>{{ user_activity_log.data ? user_activity_log.data|json_encode : '' }}</td>
+                                <td>{{ user_activity_log.activityDate ? user_activity_log.activityDate|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ user_activity_log.userId }}</td>
+                                <td>{{ user_activity_log.userEmail }}</td>
+
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="7">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('#activity_log_table').DataTable({
+                pageLength: 25,
+                dom: 'Bfrtip',
+                buttons: [
+                    { extend: 'excel', className: 'btn btn-secondary', text: 'EXCEL-р татах' },
+                    { extend: 'print', className: 'btn btn-secondary', text: 'Хэвлэх' },
+                    { extend: 'pageLength', className: 'btn btn-outline-dark', text: 'Хуудаслалт' },
+                ],
+                language: {
+                    processing:     "ачаалж байна",
+                    search:         "Хайх:",
+                    lengthMenu:    "1 хуудсанд _MENU_ ",
+                    info:           "Нийт _TOTAL_ _START_-_END_ дугаар бичилгийг харуулж байна",
+                    infoEmpty:      "",
+                    infoFiltered:   "(нийт _MAX_ бичилтээс хайлт хийв)",
+                    infoPostFix:    "",
+                    loadingRecords: "ачаалж байна...",
+                    zeroRecords:    "Үр дүн хоосон байна",
+                    emptyTable:     "Үр дүн хоосон байна",
+                    paginate: {
+                        first:      "Эхнийх",
+                        previous:   "Өмнөх",
+                        next:       "Дараагийн",
+                        last:       "Сүүлийн"
+                    },
+                    aria: {
+                        sortAscending:  ": Өсөх дарааллаар",
+                        sortDescending: ": Буурах дарааллаар"
+                    }
+                }
+            });
+        } );
+    </script>
+{% endblock %}

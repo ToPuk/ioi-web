@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Хэрэглэгч засах{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <div class="page-header-content container header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Хэрэглэгч</span></h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+
+            <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">
+                <div class="breadcrumb">
+                    <a href="{{ path('default_index') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Нүүр</a>
+                    <span class="breadcrumb-item active">Хэрэглэгчид</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="page-content container pt-0">
+    <div class="content-wrapper">
+
+        <div class="card">
+            <div class="card-body">
+{#                {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}#}
+
+                {{ form_start(form) }}
+                <div class="form-group">
+                    <label>Хэрэглэгчийн нэр:</label>
+                    {{ form_widget(form.firstName, { 'attr': {'class': 'form-control', 'placeholder': 'Нэр'} }) }}
+                    <div class="text-warning">
+                        {{ form_errors(form.firstName) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Хэрэглэгчийн Овог:</label>
+                    {{ form_widget(form.lastName, { 'attr': {'class': 'form-control', 'placeholder': 'Овог'} }) }}
+                    <div class="text-warning">
+                        {{ form_errors(form.lastName) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Цахим шуудангийн хаяг:</label>
+                    {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email'} }) }}
+                    <div class="text-warning">
+                        {{ form_errors(form.email) }}
+                    </div>
+                </div>
+                <div class="form-group {{ hospitalUser ? 'd-none':'' }}">
+                    <label>Роль:</label>
+                    {{ form_widget(form.role, { 'attr': {'class': 'form-control'}}) }}
+                    <div class="text-warning">
+                    {{ form_errors(form.role, { 'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Цахим шуудан баталгаажуулалт:</label>
+                    {{ form_widget(form.isVerified) }}
+                    <div class="text-warning">
+                        {{ form_errors(form.isVerified) }}
+                    </div>
+                </div>
+
+                <div class="form-group d-none">
+                    <label>Нууц үг:</label>
+                    {{ form_widget(form.password, { 'attr': {'class': 'form-control', 'placeholder': 'Нууц үг'} }) }}
+                    <div class="text-warning">
+                        {{ form_errors(form.password) }}
+                    </div>
+                </div>
+
+                <button class="btn btn-primary">Хадгалах</button>
+                {{ form_end(form) }}
+
+                <a href="{{ path('user_index') }}">Жагсаалтруу буцах</a>
+
+{#                {{ include('user/_delete_form.html.twig') }}#}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

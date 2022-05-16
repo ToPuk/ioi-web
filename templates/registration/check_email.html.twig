@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Бүртгүүлэх{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <div class="page-header">
+        <div class="page-header-content container header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Хэрэглэгчийн Бүртгэл</span></h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+
+            <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Бүртгэл</a>
+                    <span class="breadcrumb-item active">Сонгон шалгаруулалт</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page-content container pt-0">
+        <div class="content-wrapper">
+
+            <div class="card">
+                <div class="card-body">
+{#                    <div class="text-center mb-3"><i class="icon-envelop2 mr-2 icon-4x"></i></div>#}
+                    <div style="text-align:center;margin-top: 60px;margin-bottom: 40px;">
+                        <a href="http://selection.1818.mn/" title="logo" target="_blank">
+                            <img height="80" src="/assets/img/logo.601df78d.png" title="logo" alt="logo">
+                        </a>
+                    </div>
+                    <h1 class="text-center">И-мэйл амжилттай илгээгдлээ</h1>
+                    <h4 class="text-center text-info" style="margin-bottom: 60px;">
+                       Цахим шуудан доторх холбоос дээр дарж бүртгэлээ баталгаажуулна уу. Хэрвээ танд и-мэйл очихгүй бол spam хавтасаа шалгаарай.
+                    </h4>
+                    <p style="color:#FF0000">АНХААРУУЛГА: Мэдээлэл засварлах хүсэлтийг 2022 оны 03 дугаар сарын 31-ний өдрийн 17.00 цагаас хойш хүлээн авах боломжгүй болохыг мэдэгдье.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

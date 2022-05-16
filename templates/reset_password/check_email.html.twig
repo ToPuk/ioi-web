@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Нууц үг солих{% endblock %}
+
+{% block body %}
+
+    <div class="page-content">
+        <!-- Main content -->
+        <div class="content-wrapper">
+            <!-- Content area -->
+            <div class="content d-flex justify-content-center align-items-center">
+
+                <div class="card mb-0">
+
+                    <div class="card-header bg-white">
+                        <h3 class="text-center">Нууц үг шинэчлэх</h3>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="text-center mb-1">
+                            <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                        </div>
+
+                        <div class="text-center">
+                            <p>Таны цахим шуудангийн хаяг /и-мэйл хаяг/-руу нууц үг шинэчлэх холбоос илгээгдлээ.</p>
+                            <p>Уг холбоос нь {{ tokenLifetime|date('g') }} цагийн хугацаанд хүчинтэй болохыг анхаарна уу</p>
+                            <p>Хэрвээ и-мэйл танд харагдахгүй бол spam хавтсаа шалгана уу. <a href="{{ path('app_forgot_password_request') }}">дахин оролдох</a>.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

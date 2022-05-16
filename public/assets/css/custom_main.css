@@ -1,0 +1,16 @@
+body{
+    background-image: url("../img/batter.png");
+    background-repeat: repeat;
+}
+.body-home{
+    background-image: url("../img/homebg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+#navbar-main{
+    background-image: url("../img/headerbg.jpg");
+}
+#navbar-footer{
+    padding: 40px;
+}
