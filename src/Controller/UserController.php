@@ -84,7 +84,7 @@ class UserController extends AbstractController
         $form = $this->createForm(UserType::class, $user);
         $userRoles = $user->getRoles();
         $hospitalUser = false;
-        if(in_array('ROLE_HOSPITAL', $userRoles, true)) {
+        if(in_array('ROLE_USER', $userRoles, true)) {
             $hospitalUser = true;
         }
         $form->handleRequest($request);

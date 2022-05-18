@@ -63,18 +63,6 @@ class User implements UserInterface
     private $announcement;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Hospital::class, inversedBy="user")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $hospital;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=EMBaiguullaga::class, inversedBy="user")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $emb;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
@@ -243,29 +231,4 @@ class User implements UserInterface
     {
         return $this->isVerified;
     }
-
-    public function getHospital(): ?Hospital
-    {
-        return $this->hospital;
-    }
-
-    public function setHospital(?Hospital $hospital): self
-    {
-        $this->hospital = $hospital;
-
-        return $this;
-    }
-
-    public function getEmb(): ?EMBaiguullaga
-    {
-        return $this->emb;
-    }
-
-    public function setEmb(?EMBaiguullaga $emb): self
-    {
-        $this->emb = $emb;
-
-        return $this;
-    }
-
 }

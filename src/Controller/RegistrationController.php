@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Box\ValidatorBox;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
@@ -57,50 +56,7 @@ class RegistrationController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var EMBaiguullaga $emb */
-            $emb = $form['emb']->getData();
-            $logger->info('register-request-'.$user->getEmail(), array('emb_id'=>$emb->getId(), 'emb_reg'=>$emb->getRegNum() ,'user'=>$user));
-            $olduser = $entityManager->getRepository(User::class)->findOneBy(array('email'=>$user->getEmail()));
-            if ($olduser) {
 
-                return $this->render('registration/register.html.twig', [
-                    'registrationForm' => $form->createView(),
-                    'alert' => 'Уг и-мэйл дээр хэрэглэгч бүртгэгдсэн байна'
-                ]);
-            }
-
-            if (!$emb) {
-
-                return $this->render('registration/register.html.twig', [
-                    'registrationForm' => $form->createView(),
-                    'alert' => 'Мэдээллийн сангаас тухайн байгууллагын мэдээлэл олдсонгүй. Та байгууллагын регистрийн дугаараа шалгана уу. Регистр зөв боловч бүртгэл үүсэхгүй бол  70101153, 70101159, 70101116 дугаарт холбогдоно уу.'
-                ]);
-            }
-
-            $hospital = $entityManager->getRepository(Hospital::class)->findOneBy(array('emb'=>$emb));
-
-            if ($hospital != null) {
-                $hospitalUsers = $entityManager->getRepository(User::class)->findBy(array('hospital'=>$hospital));
-                if (count($hospitalUsers) > 2) {
-
-                    return $this->render('registration/register.html.twig', [
-                        'registrationForm' => $form->createView(),
-                        'alert' => 'Уг эмнэлэг дээр 3-с илүү хэрэглэгч бүртгэх боломжгүй байна.'
-                    ]);
-                }
-            }
-
-            $validatorBox = new ValidatorBox($entityManager);
-            $result = $validatorBox->checkLicense($emb);
-
-            if($result['status'] != 'ok'){
-
-                return $this->render('registration/register.html.twig', [
-                    'registrationForm' => $form->createView(),
-                    'alert' => 'Бүртгэл үүсгэхэд алдаа гарлаа та дахин оролдоно уу!'
-                ]);
-            }
-            $hospital = $entityManager->getRepository(Hospital::class)->findOneBy(array('emb'=>$emb));
             // encode the plain password
             $user->setPassword(
                 $userPasswordEncoderInterface->encodePassword(
@@ -108,31 +64,12 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->addRole('ROLE_HOSPITAL');
-            $user->setHospital($hospital);
+            $user->addRole('ROLE_USER');
             if (!$entityManager->isOpen()) {
                 $entityManager = $this->getDoctrine()->getManager();
             }
             $entityManager->persist($user);
             $entityManager->flush();
-
-
-            $filePath = $this->param->get('kernel.project_dir') . DIRECTORY_SEPARATOR . "public" . DIRECTORY_SEPARATOR . "assets". DIRECTORY_SEPARATOR . "excel". DIRECTORY_SEPARATOR ."hr_equipment.xlsx";
-            $toMailAddress = [];
-
-//            array_push($toMailAddress, new Address('amgaa36@yahoo.com'));
-            array_push($toMailAddress, new Address('selection.1818.mn@gmail.com'));
-
-            // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-                (new TemplatedEmail())
-                    ->from(new Address('selection@1818.mn', 'Эрүүл Мэндийн Даатгалын Ерөнхий Газар'))
-                    ->to($user->getEmail())
-                    ->addBcc(...$toMailAddress)
-                    ->subject('Цахим шуудангийн хаяг баталгаажуулалт')
-                    ->attachFromPath($filePath)
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
-            );
 
             // do anything else you need here, like send an email
             return $this->redirectToRoute('registration_check_email');
