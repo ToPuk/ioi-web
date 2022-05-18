@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Announcement;
-use App\Entity\RequestGeneral;
 use App\Entity\User;
 use App\Form\AnnouncementType;
 use App\Repository\AnnouncementRepository;
