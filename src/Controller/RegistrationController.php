@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportException;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Message;
@@ -213,26 +214,24 @@ class RegistrationController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $email = (new TemplatedEmail())
+                ->from(new Address('admin@ioi.mn', 'iO Institute'))
+                ->to('orgil@iotech.mn')
+                ->subject('Бүртгэл')
+                ->html('Овог:  '.$form['lastname']->getData().'
+                        <br>Нэр:  '.$form['firstname']->getData().'
+                        <br>Утасны дугаар:  '.$form['phone']->getData().'
+                        <br>Имэйл:  '.$form['email']->getData().'
+                        <br>Төрөл:  '.$form['type']->getData().'
+                        <br>Санал хүсэлт:  '.$form['comment']->getData())
+            ;
             try {
-                $email = (new TemplatedEmail())
-                    ->from(new Address('admin@ioi.mn', 'iO Institute'))
-                    ->to('orgil@iotech.mn')
-                    ->subject('Бүртгэл')
-                    ->html('Овог:  '.$form['lastname']->getData().'
-                            <br>Нэр:  '.$form['firstname']->getData().'
-                            <br>Утасны дугаар:  '.$form['phone']->getData().'
-                            <br>Имэйл:  '.$form['email']->getData().'
-                            <br>Төрөл:  '.$form['type']->getData().'
-                            <br>Санал хүсэлт:  '.$form['comment']->getData())
-                ;
                 $mailer->send($email);
-
-                return $this->redirectToRoute('register_index',['status'=>'success']);
-
-            } catch (VerifyEmailExceptionInterface $exception) {
+            } catch (TransportException $e) {
                 return $this->redirectToRoute('register_index',['status'=>'error']);
             }
-
+            return $this->redirectToRoute('register_index',['status'=>'success']);
         }
 
         if($status === 'success'){
