@@ -41,19 +41,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/announcement/new, roles: ROLE_USER }
-        - { path: ^/legal/info/new, roles: ROLE_USER }
         - { path: ^/announcement/create_user, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/announcement, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/check_email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/legal/info, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/hospital/bed-tushaal, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/tender, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/verify/email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/request/general/new, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/request/general/result, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/request/general, roles: ROLE_USER }
-        - { path: ^/main/diagnose/type, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/guide, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/program, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/reset-password, roles: IS_AUTHENTICATED_ANONYMOUSLY }

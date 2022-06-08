@@ -24,17 +24,17 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        $em = $this->getDoctrine()->getManager();
-        $qb = $em->getRepository(Tender::class)->createQueryBuilder('p');
-        $qb->andWhere('p.endDate >= :endDate')
-            ->setParameter('endDate', new \DateTime('now'));
-
-        $tender = $qb
-            ->orderBy('p.startDate', 'DESC')
-            ->getQuery()
-            ->getResult();
-        return $this->render('default/index.html.twig', ['last_username' => $lastUsername, 'error' => $error, 'tender'=>$tender]);
-//        return $this->redirectToRoute('default_index');
+//        $em = $this->getDoctrine()->getManager();
+//        $qb = $em->getRepository(Tender::class)->createQueryBuilder('p');
+//        $qb->andWhere('p.endDate >= :endDate')
+//            ->setParameter('endDate', new \DateTime('now'));
+//
+//        $tender = $qb
+//            ->orderBy('p.startDate', 'DESC')
+//            ->getQuery()
+//            ->getResult();
+//        return $this->render('default/index.html.twig', ['last_username' => $lastUsername, 'error' => $error, 'tender'=>$tender]);
+        return $this->redirectToRoute('default_index');
     }
 
     /**

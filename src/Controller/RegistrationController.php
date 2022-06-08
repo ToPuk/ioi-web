@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\RegUsers;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
@@ -109,6 +110,9 @@ class RegistrationController extends AbstractController
     {
         $status = $request->get('status');
 
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+
         $form = $this->createFormBuilder()
             ->setMethod('GET')
             ->add('lastname', TextType::class, [
@@ -151,6 +155,16 @@ class RegistrationController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $register = new RegUsers();
+            $register->setFirstName($form['firstname']->getData());
+            $register->setLastName($form['lastname']->getData());
+            $register->setEmail($form['email']->getData());
+            $register->setPhoneNumber($form['phone']->getData());
+            $register->setType($form['type']->getData());
+            $register->setComment($form['comment']->getData());
+            $em->persist($register);
+            $em->flush();
 
             $email = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute'))

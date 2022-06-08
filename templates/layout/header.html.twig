@@ -22,14 +22,31 @@
                         <!-- Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand logo" href="{{ path('default_index') }}">
-                                <img class="img-fluid" src="global_assets/images/logo.png" alt="">
+                                <img class="img-fluid" src="{{ asset('global_assets/images/logo.png') }}" alt="">
                             </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span></span>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span></span>
                                 <span></span>
                                 <span></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
+                                <ul class="navbar-nav mx-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/' %} active {% endif %}" href="{{ path('default_index') }}">Эрчимжүүлсэн хөтөлбөр</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/program/1' %} active {% endif %}" href="{{ path('product_summer') }}">Зуны хөтөлбөр</a>
+                                    </li>
+{#                                    <li class="nav-item">#}
+{#                                        <a class="nav-link {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/program/3' %} active {% endif %}" href="{{ path('product_data') }}">Мэргэшсэн хѳтѳлбѳр</a>#}
+{#                                    </li>#}
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/program/2' %} active {% endif %}" href="{{ path('product_uiux') }}">UI UX дизайны хөтөлбөр</a>
+                                    </li>
+{#                                    <li class="nav-item">#}
+{#                                        <a class="nav-link" href="{{ path('default_index') }}">Мэдээ мэдээлэл</a>#}
+{#                                    </li>#}
+                                </ul>
                             </div>
                             <div class="right-nav align-items-center d-flex justify-content-end">
                                 <div>

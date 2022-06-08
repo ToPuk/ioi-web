@@ -14,7 +14,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-6">
                     <div class="footer-logo mb-3">
-                        <a href="index.html"><img class="img-fluid" src="global_assets/images/logo-white.png" alt=""></a>
+                        <a href="{{ path('default_index') }}"><img class="img-fluid" src="{{ asset('global_assets/images/logo-white.png') }}" alt=""></a>
                     </div>
                     <p class="mb-0">Бидний өдөр тутмын амьдралын салшгүй нэг хэсэг болсон технологи цаг, минут, секунд тутамд сайжирч байгаа ба энэ салбарт хөл тавих, чадвар эзэмших нь шинэ үеийн залуусын хүсэл мөрөөдөл болсоор байна..</p>
                 </div>
@@ -22,18 +22,23 @@
                     <h4 class="mb-4 text-white">Холбоос</h4>
                     <div class="footer-list">
                         <ul class="list-inline">
-                            <li><a href="#top">Эхлэл</a>
+                            {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/' %}
+                                <li><a href="#top">Эхлэл</a>
+                                </li>
+                                <li><a href="#program">Хѳтѳлбѳр</a>
+                                </li>
+                                <li> <a href="#team">Багш</a>
+                                </li>
+                                <li> <a href="#advantage">Давуу тал</a>
+                                </li>
+                                <li> <a href="#faq">Түгээмэл асуулт</a>
+                                </li>
+                            {% else %}
+                                <li><a href="{{ path('default_index') }}">Нүүр хуудас</a>
+                                </li>
+                            {% endif %}
+                            <li> <a href="{{ path('register_index') }}">Холбоо барих</a>
                             </li>
-                            <li><a href="#program">Хѳтѳлбѳр</a>
-                            </li>
-                            <li> <a href="#team">Багш</a>
-                            </li>
-                            <li> <a href="#advantage">Давуу тал</a>
-                            </li>
-                            <li> <a href="#faq">Түгээмэл асуулт</a>
-                            </li>
-
-
                         </ul>
                     </div>
                 </div>
@@ -63,7 +68,7 @@
         </div>
     </div>
     <div class="dot-bg">
-        <img class="img-fluid" src="global_assets/images/pattern/05.png" alt="">
+        <img class="img-fluid" src="{{ asset('global_assets/images/pattern/05.png') }}" alt="">
     </div>
 </footer>
 
@@ -81,16 +86,15 @@
             <h4 class="text-white mb-4">Холбоо барих</h4>
             <div class="contact-media mb-4"> <i class="flaticon-location"></i>
                 <h6>Хаяг:</h6>
-                <span>Монгол улс, Улаанбаатар хот, Баянзүрх дүүрэг, 1-р хороо, Энхтайваны өргөн чөлөө-5, 13381, Ш/H: Улаанбаатар-49,</span>
+                <span>Монгол улс, Улаанбаатар хот, Баянзүрх дүүрэг, 1-р хороо, Энхтайваны өргөн чөлөө-5, 13381, Ш/H: Улаанбаатар-49, СЭЗИС-н байр, B-4 давхар</span>
             </div>
             <div class="contact-media mb-4"> <i class="flaticon-email"></i>
-                <h6>Имэйлээр холбогдох</h6>
+                <h6>И-мэйлээр холбогдох</h6>
                 <a href="mailto:admin@ioi.mn"> admin@ioi.mn</a>
             </div>
             <div class="contact-media"> <i class="flaticon-support-1"></i>
-                <h6>Утасаар холбогдох</h6>
-                <a href="tel:+976 7015 8820">+976 7015 8820</a>
-                <a href="tel:+976 8985 0436">+976 8985 0436</a>
+                <h6>Утсаар холбогдох</h6>
+                <a href="tel:+976 7015 8820">+976 7732 1010</a>
             </div>
         </div>
         <div class="hero-social mt-5">
