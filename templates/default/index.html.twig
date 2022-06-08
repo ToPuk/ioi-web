@@ -5,7 +5,7 @@
 {% block body %}
         <!--hero section start-->
 
-        <section class="banner position-relative fullscreen-banner dark-bg p-0" data-bg-img="global_assets/images/pattern/02.png">
+        <section class="banner position-relative fullscreen-banner dark-bg p-0" data-bg-img="{{ asset('global_assets/images/pattern/02.png') }}">
             <div class="hero-animation"> <span></span>
                 <span></span>
                 <span></span>
@@ -85,11 +85,13 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="featured-item style-1 active">
-                                        <div class="featured-icon"> <i class="flaticon-idea"></i>
-                                        </div>
-                                        <div class="featured-title">
-                                            <h5>Эрчимжүүлсэн хөтөлбөр</h5>
-                                        </div>
+                                        <a href="#yearProgram">
+                                            <div class="featured-icon"> <i class="flaticon-idea"></i>
+                                            </div>
+                                            <div class="featured-title">
+                                                <h5>Эрчимжүүлсэн хөтөлбөр</h5>
+                                            </div>
+                                        </a>
                                         <div class="featured-desc">
                                             <p>Уламжлалт 4 жилийн хөтөлбөрийг 1 жилд багтаан олгодог онцлогтой.</p>
                                         </div>
@@ -109,11 +111,13 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 mt-5">
                                     <div class="featured-item style-1">
-                                        <div class="featured-icon"> <i class="flaticon-analytics"></i>
-                                        </div>
-                                        <div class="featured-title">
-                                            <h5>Зуны хѳтѳлбѳр</h5>
-                                        </div>
+                                        <a href="{{ path('product_summer') }}">
+                                            <div class="featured-icon"> <i class="flaticon-analytics"></i>
+                                            </div>
+                                            <div class="featured-title">
+                                                <h5>Зуны хѳтѳлбѳр</h5>
+                                            </div>
+                                        </a>
                                         <div class="featured-desc">
                                             <p>Програмчлалын анхан болон дунд шатны мэдлэгийг системтэйгээр олгодог онцлогтой.</p>
                                         </div>
@@ -121,11 +125,13 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 mt-5">
                                     <div class="featured-item style-1">
-                                        <div class="featured-icon"> <i class="flaticon-optimization"></i>
-                                        </div>
-                                        <div class="featured-title">
-                                            <h5>UI UX дизайны хөтөлбөр</h5>
-                                        </div>
+                                        <a href="{{ path('product_uiux') }}">
+                                            <div class="featured-icon"> <i class="flaticon-optimization"></i>
+                                            </div>
+                                            <div class="featured-title">
+                                                <h5>UI UX дизайны хөтөлбөр</h5>
+                                            </div>
+                                        </a>
                                         <div class="featured-desc">
                                             <p>UI, UX дизайны суурь ойлголтуудыг гурван сарын хугацаанд олгох зорилготой.</p>
                                         </div>
@@ -156,7 +162,7 @@
 
 
 
-            <section >
+            <section id="yearProgram">
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-8 col-md-12">
@@ -170,7 +176,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/js.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/js.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -184,7 +190,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3 active">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/postgre.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/postgre.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -198,7 +204,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/html.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/html.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -212,7 +218,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/js.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/js.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -226,7 +232,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/java.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/java.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -241,7 +247,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/flutter.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/flutter.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -256,7 +262,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/node.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/node.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -271,7 +277,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/figma.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/figma.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -286,7 +292,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/react.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/react.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -301,7 +307,7 @@
                         <div class="col-lg-4 col-md-6 mt-5">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
-                                    <img class="img-fluid" src="global_assets/images/pern.png" alt="" style="margin-bottom: 10px;">
+                                    <img class="img-fluid" src="{{ asset('global_assets/images/pern.png') }}" alt="" style="margin-bottom: 10px;">
                                     <span class="border-anim"></span>
                                 </div>
                                 <div class="featured-title">
@@ -319,7 +325,7 @@
 
             <!--case study start-->
 
-            <section id="team" class="theme-bg pb-10" data-bg-img="global_assets/images/bg/08.jpg" style="background-image: url(&quot;global_assets/images/bg/08.jpg&quot;);">
+            <section id="team" class="theme-bg pb-10" data-bg-img="{{ asset('global_assets/images/bg/08.jpg') }}" style="background-image: url(&quot;global_assets/images/bg/08.jpg&quot;);">
                 <div class="container mb-10">
                     <div class="row align-items-center">
                         <div class="col-md-8">
@@ -350,13 +356,13 @@
                         <div class="col-md-4 col-12">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/amgaa.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/amgaa.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=BS5paeLQt2s" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Энх-Амгалан</a></h5>
+                                    <h5><a href="#">Энх-Амгалан</a></h5>
                                     <span>Багш - Алгоритм Ба Өгөгдлийн Бүтэц</span>
                                 </div>
                             </div>
@@ -364,13 +370,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/tulga.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/tulga.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=4y1eJuBhz0A" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Тулга</a></h5>
+                                    <h5><a href="#">Тулга</a></h5>
                                     <span>Багш - Програмчлалын үндэс</span>
                                 </div>
                             </div>
@@ -378,13 +384,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/tushgee.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/tushgee.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=HCWB3XHILj4&t=4s" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Түшиг</a></h5>
+                                    <h5><a href="#">Түшиг</a></h5>
                                     <span>Багш - Объект Хандалтат Програмчлал</span>
                                 </div>
                             </div>
@@ -395,13 +401,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/amraa.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/amraa.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=eXMlEDYUJnA&t=1s" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Энх-Амарбаясгалан</a></h5>
+                                    <h5><a href="#">Энх-Амарбаясгалан</a></h5>
                                     <span>Багш - Мобайл хѳгжүүлэлт</span>
                                 </div>
                             </div>
@@ -411,13 +417,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/bilgee.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/bilgee.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=dyWwYw5XOoA" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Билэгсайхан</a></h5>
+                                    <h5><a href="#">Билэгсайхан</a></h5>
                                     <span>Багш - Веб хѳгжүүлэлтийн үндэс</span>
                                 </div>
                             </div>
@@ -426,13 +432,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/sainaa.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/sainaa.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=t3R6xGT181M" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Сайнбаяр</a></h5>
+                                    <h5><a href="#">Сайнбаяр</a></h5>
                                     <span>Багш - UX</span>
                                 </div>
                             </div>
@@ -444,13 +450,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/aso.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/aso.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=Fs2nf3wEfVw" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Анхбаяр</a></h5>
+                                    <h5><a href="#">Анхбаяр</a></h5>
                                     <span>Багш - UI</span>
                                 </div>
                             </div>
@@ -460,13 +466,13 @@
                         <div class="col-md-4 col-12 mt-5 mt-md-0">
                             <div class="team-member style-2">
                                 <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="global_assets/images/team/burnee.png" alt="">
+                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/burnee.png') }}" alt="">
                                 </div>
                                 <div class="team-social-icon">
                                     <a class="btn btn-white" href="https://www.youtube.com/watch?v=XapR-8P7tio" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
                                 </div>
                                 <div class="team-description">
-                                    <h5><a href="team-single.html">Бүрэнхүү</a></h5>
+                                    <h5><a href="#">Бүрэнхүү</a></h5>
                                     <span>Багш - Backend хѳгжүүлэлт</span>
                                 </div>
                             </div>
@@ -521,7 +527,7 @@
                                     <span>03</span>
                                 </div>
                                 <div class="featured-title">
-                                    <h5>Мэдээллийн тѳхнологийн экосистем</h5>
+                                    <h5>Мэдээллийн технологийн экосистем</h5>
                                 </div>
                             </div>
                         </div>
@@ -531,7 +537,7 @@
 
             <!--feature end-->
 
-            <section class="page-title animatedbg dark-bg text-center" data-bg-img="global_assets/images/pattern/01.png" id="faq">
+            <section class="page-title animatedbg dark-bg text-center" data-bg-img="{{ asset('global_assets/images/pattern/01.png') }}" id="faq">
                 <div class="container">
                     <div class="row">
                         <div class="col">
