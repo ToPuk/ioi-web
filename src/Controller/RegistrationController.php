@@ -168,7 +168,7 @@ class RegistrationController extends AbstractController
 
             $email = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute'))
-                ->to('orgil@iotech.mn')
+                ->to('orgil@iotech.mn','tulga@iotech.mn')
                 ->subject('Бүртгэл')
                 ->html('Овог:  '.$form['lastname']->getData().'
                         <br>Нэр:  '.$form['firstname']->getData().'
