@@ -102,8 +102,8 @@ class ProductController extends AbstractController
             $em->flush();
 
             $email = (new TemplatedEmail())
-                ->from(new Address('admin@ioi.mn', 'iO Institute'))
-                ->to('orgil@iotech.mn')
+                ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
+                ->to('orgil@iotech.mn','tulga@iotech.mn')
                 ->subject('Бүртгэл')
                 ->html('Овог:  '.$form['lastname']->getData().'
                         <br>Нэр:  '.$form['firstname']->getData().'
@@ -112,8 +112,20 @@ class ProductController extends AbstractController
                         <br>Төрөл:  '.$form['type']->getData().'
                         <br>Санал хүсэлт:  '.$form['comment']->getData())
             ;
+
+            $emailStudent = (new TemplatedEmail())
+                ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
+                ->to($form['email']->getData())
+                ->subject('Амжилттай бүртгэгдлээ')
+                ->htmlTemplate('emails/general_request.html.twig')
+                ->context([
+                    'username' => $form['firstname']->getData(),
+                ])
+            ;
+
             try {
                 $mailer->send($email);
+                $mailer->send($emailStudent);
             } catch (TransportException $e) {
                 return $this->redirectToRoute('product_summer',['status'=>'error']);
             }
