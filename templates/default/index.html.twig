@@ -5,7 +5,7 @@
 {% block body %}
 
 
-        <a href=/contact-us class="c-talk-button -fixed" data-module-talk-button>
+        <a href="{{ path('contact_index') }}" class="c-talk-button -fixed" data-module-talk-button>
             Talk
             <span class="c-talk-button_background">
             <svg role="img"><use xlink:href="assets/images/sprite.svg#shape"></use></svg>
@@ -35,7 +35,7 @@
                         data-module-header-progress
                 >
                     <div class="o-layout_item u-1/2@from-small u-3/5@to-small">
-                        <a href=/ class="c-header_logo" data-scroll data-scroll-speed="2"
+                        <a href="/" class="c-header_logo" data-scroll data-scroll-speed="2"
                            data-scroll-position="top">
                             <svg class="u-none@from-medium" role="img"><title>Institute</title>
                                 <use href="assets/images/sprite.svg#logo-figure"></use>
@@ -48,7 +48,7 @@
                         </button>
                     </div>
                     <div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right">
-                        <a href=/contact-us class="c-header_cta">
+                        <a href="{{ path('contact_index') }}" class="c-header_cta">
                             Холбоо барих
                         </a>
                     </div>
@@ -814,7 +814,7 @@
 
                                 </p>
                                 <div class="u-anim-scroll -delay-2" data-scroll>
-                                    <a href=/contact-us class="c-button -hover-white"
+                                    <a href="{{ path('contact_index') }}" class="c-button -hover-white"
                                        rel="noopener">
                                             <span class="c-button_label_wrap">
                                                 <span class="c-button_label">
@@ -850,7 +850,7 @@
                             <p class="c-heading -h2 u-anim-scroll -parent -delay-2">
                                 Холбоо барих
                             </p>
-                            <a href=/contact-us
+                            <a href="{{ path('contact_index') }}"
                                class="c-button -hover-white -white u-margin-small-y u-anim-scroll -parent -delay-3">
                             <span class="c-button_label_wrap">
                                 <span class="c-button_label">

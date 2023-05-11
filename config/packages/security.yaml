@@ -45,6 +45,9 @@ security:
         - { path: ^/announcement, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/check_email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/program, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/contact, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/about-us, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/program, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/reset-password, roles: IS_AUTHENTICATED_ANONYMOUSLY }

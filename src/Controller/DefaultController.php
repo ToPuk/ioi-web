@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use PhpOffice\PhpSpreadsheet\IOFactory;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
@@ -15,35 +13,28 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class DefaultController extends AbstractController
 {
 
-
     /**
      * @Route("/", name="default_index")
      */
     public function indexAction(Request $request)
     {
-
         return $this->render('default/index.html.twig');
-
     }
 
     /**
-     * @Route("/contact-us", name="contact_us_index")
+     * @Route("/contact", name="contact_index")
      */
-    public function contactUs(Request $request)
+    public function contact(Request $request)
     {
-
-        return $this->render('default/contact.html.twig');
-
+        return $this->render('pages/contact.html.twig');
     }
 
     /**
      * @Route("/about-us", name="about_us_index")
      */
-    public function aboutUs(Request $request)
+    public function about(Request $request)
     {
-
-        return $this->render('default/contact.html.twig');
-
+        return $this->render('pages/about.html.twig');
     }
 
 }

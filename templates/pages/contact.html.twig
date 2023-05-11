@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Нүүр хуудас{% endblock %}
+{% block title %}Холбоо барих{% endblock %}
 
 {% block body %}
 
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
 
-<a href=/contact-us class="c-talk-button -fixed" data-module-talk-button>
+<a href="{{ path('contact_index') }}" class="c-talk-button -fixed" data-module-talk-button>
     Talk
     <span class="c-talk-button_background">
             <svg role="img"><use xlink:href="../assets/images/sprite.svg#shape"></use></svg>
@@ -21,7 +24,7 @@
             </span>
         </span>
 </a>
-<p class="o-scroll_indicator u-text-label">Scroll</p>
+<p class="o-scroll_indicator u-text-label">Доошоо</p>
 <main class="o-scroll" data-module-scroll="main">
 
     <header data-scroll-section class="c-header">
@@ -43,8 +46,8 @@
                 </button>
             </div>
             <div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right">
-                <a href=/contact-us class="c-header_cta">
-                    Let's talk
+                <a href="{{ path('contact_index') }}" class="c-header_cta">
+                    Холбоо барих
                 </a>
             </div>
         </div>
@@ -197,7 +200,7 @@
                     <p class="c-heading -h2 u-anim-scroll -parent -delay-2">
                         Холбоо барих
                     </p>
-                    <a href=/contact-us
+                    <a href="{{ path('contact_index') }}"
                        class="c-button -hover-white -white u-margin-small-y u-anim-scroll -parent -delay-3">
                             <span class="c-button_label_wrap">
                                 <span class="c-button_label">
@@ -288,5 +291,43 @@
 {% endblock %}
 
 {% block javascripts %}
-{% include 'inc/flashmsg.html.twig' %}
+    {% include 'inc/flashmsg.html.twig' %}
+    <script>
+        $(document).ready( function () {
+            {% if alert is defined and alert != null %}
+            $(function(){
+                new PNotify({
+                    title: 'Алдаа гарлаа',
+                    text: '{{ alert }}'
+                });
+            });
+            {% endif %}
+        });
+
+        var loader = $('.preloader');
+
+        var $emb = $('#registration_form_embRegNum');
+        $emb.change(function() {
+            loader.show();
+
+            var $form = $(this).closest('form');
+            var data = {};
+
+            data[$emb.attr('name')] = $emb.val();
+
+            $.ajax({
+                url : $form.attr('action'),
+                type: $form.attr('method'),
+                data : data,
+                success: function(html) {
+                    $('#registration_form_emb').replaceWith(
+                        $(html).find('#registration_form_emb')
+                    );
+                },
+                complete: function() {
+                    loader.hide();
+                }
+            });
+        });
+    </script>
 {% endblock %}
