@@ -37,7 +37,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/about-us", name="contact_us_index")
+     * @Route("/about-us", name="about_us_index")
      */
     public function aboutUs(Request $request)
     {
