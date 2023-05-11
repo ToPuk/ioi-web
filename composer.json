@@ -12,7 +12,6 @@
         "doctrine/orm": "^2.7",
         "friendsofsymfony/ckeditor-bundle": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
-        "phpdocumentor/reflection-docblock": "5.1.*",
         "phpoffice/phpspreadsheet": "^1.19",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/apache-pack": "^1.0",
@@ -77,7 +76,10 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
