@@ -1,0 +1,412 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Бидний тухай{% endblock %}
+
+{% block body %}
+
+
+<a href="{{ path('contact_index') }}" class="c-talk-button -fixed" data-module-talk-button>
+    Talk
+        <span class="c-talk-button_background">
+            <svg role="img"><use xlink:href="assets/images/sprite.svg#shape"></use></svg>
+        </span>
+        <span class="c-talk-button_slider swiper-container" data-talk-button="slider">
+            <span class="swiper-wrapper">
+                <div class="c-talk-button_slider_item swiper-slide">
+                    <svg role="img"><use xlink:href="assets/images/sprite.svg#talk"></use></svg>
+                </div>
+                <div class="c-talk-button_slider_item swiper-slide">
+                    <svg role="img"><use xlink:href="assets/images/sprite.svg#talk"></use></svg>
+                </div>
+            </span>
+        </span>
+    </a>
+
+    <main class="o-scroll" data-module-scroll="main">
+
+        <header data-scroll-section class="c-header">
+            <div
+                    class="o-layout -middle"
+                    data-scroll
+                    data-scroll-id="header"
+                    data-scroll-offset="100%, 0"
+                    data-scroll-repeat
+                    data-scroll-call="toggleHeaderProgress, Scroll"
+                    data-module-header-progress
+            >
+                <div class="o-layout_item u-1/2@from-small u-3/5@to-small">
+                    <a href="/" class="c-header_logo" data-scroll data-scroll-speed="2"
+                       data-scroll-position="top">
+                        <svg class="u-none@from-medium" role="img"><title>Institute</title>
+                            <use href="assets/images/sprite.svg#logo-figure"></use>
+                        </svg>
+                        <span class="u-screen-reader-text">Institute</span>
+                    </a>
+                    <button class="c-header_button u-none@from-medium" arial-label="Menu" type="button"
+                            data-module-nav-button>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right">
+                    <a href="{{ path('contact_index') }}" class="c-header_cta">
+                        Холбоо барих
+                    </a>
+                </div>
+            </div>
+
+        </header>
+        <section data-scroll-section>
+            <header class="c-header-career o-layout -bottom" data-scroll>
+                <div class="c-header-career_heading o-layout_item u-2/3@from-medium u-border-right@from-medium u-border-bottom@to-medium">
+                    <span class="c-bleam u-none@to-medium" data-scroll data-scroll-repeat>
+                        <span class="c-bleam_wrap -right"></span>
+                    </span>
+                    <span class="c-bleam u-none@from-medium" data-scroll data-scroll-repeat>
+                        <span class="c-bleam_wrap -bottom"></span>
+                    </span>
+
+                    <p class="u-padding-small-y u-padding-x u-anim -delay-2">
+                        Бидний тухай
+                    </p>
+                    <div class="u-padding-x">
+                        <h1 class="c-header-career_title c-animated-title c-heading -h1" data-module-split>
+                            Шилдэг технологийн мэргэжилтнүүд IO-д байдаг.
+                        </h1>
+                    </div>
+                </div>
+                <div class="o-layout_item u-1/3@from-medium">
+                    <div class="c-header-career_content u-padding">
+                        <p class="u-anim -delay-6">
+                            IO-ийн багш хамт олон маань технологиор дамжуулан ирээдүй болсон залуу үедээ өөрсдийн сурсан мэдсэн бүхнээ хуваалцан Монгол гэдэг нуураас биш Дэлхий гэдэг далайгаас ус хутгахаар зорин ажиллаад хэдийнээ 4 жил болсон байна.
+                        </p>
+                        <div class="c-header-career_cta">
+
+                            <a href="#aboutus" class="c-header-career_cta_button c-button -color-white -hover-white" data-scroll-to>
+                                <span class="c-button_label_wrap">
+                                    <span class="c-button_label">
+                                        ТОВЧХОНДОО
+                                    </span>
+                                </span>
+                                <span class="c-button_icon_wrap">
+                                    <span class="c-button_icon">
+                                        <svg role="img"><use xlink:href="../assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <section data-scroll-section>
+            <span class="c-bleam" data-scroll data-scroll-repeat>
+                <span class="c-bleam_wrap -top"></span>
+            </span>
+            <div class="c-rail || u-border-top" data-scroll data-scroll-repeat data-scroll-offset="0">
+                <div class="c-rail_inner">
+                    <div class="c-rail_item">
+                        <h2 class="c-rail_heading -h1 c-rail_title" data-module-split-chars>
+                            IO-ийн багш хамт олон
+                        </h2>
+                    </div>
+                    <div class="c-rail_item">
+                        <h2 class="c-rail_heading -h1 c-rail_title" data-module-split-chars aria-hidden="true">
+                            IO-ийн багш хамт олон
+                        </h2>
+                    </div>
+                    <div class="c-rail_item">
+                        <h2 class="c-rail_heading -h1 c-rail_title" data-module-split-chars aria-hidden="true">
+                            IO-ийн багш хамт олон
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="c-case-study-cta u-background-white" data-scroll-section>
+			<span class="o-trigger -top" data-scroll data-scroll-call="updateTheme,Scroll" data-scroll-repeat
+                  data-theme="light" data-scroll-offset="0"></span>
+            <section class="c-case-study-cta_content" data-scroll>
+                <div class="o-layout -flex@from-medium">
+
+
+                </div>
+            </section>
+
+            <div class="c-case-study-cta_visual -offset">
+                <div class="c-case-study-cta_visual_poster_wrap">
+                    <div class="c-case-study-cta_visual_poster" data-scroll data-scroll-speed="-4"
+                         data-scroll-call="lazyLoad, Scroll" data-src="../uploads/case-studies/family.jpg"></div>
+                </div>
+            </div>
+        </section>
+
+        <section data-scroll-section>
+
+
+            <section class="u-background-white u-border-bottom" id="aboutus">
+                <h2 class="c-content-statistic_header u-padding c-heading -h2">
+                    БИДНИЙ ТУХАЙ ТОВЧХОНДОО
+                </h2>
+                <div class="o-layout">
+                    <div class="o-layout_item u-1/2@from-medium u-padding" data-scroll>
+                        <div class="c-content-statistic_heading">
+                            <div class="o-layout -gutter-small -top">
+                                <div class="o-layout_item u-1/3@from-medium u-anim-scroll -parent">
+                                    Жил бүр манай багш нарын туршлага болон тоо нэмэгдсээр 30 гаруй хүнтэй баг болсон байна.
+                                </div>
+                                <div class="o-layout_item u-2/3@from-medium u-anim-scroll -parent -delay-1">
+                                    <p class="c-content-statistic_heading_text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-content-statistic_stats">
+                            <h3 class="c-content-statistic_stats_text u-anim-scroll -parent -delay-3">30+</h3>
+                        </div>
+                    </div>
+                    <div class="o-layout_item u-1/2@from-medium u-padding" data-scroll>
+                        <div class="c-content-statistic_heading">
+                            <div class="o-layout -gutter-small -top">
+                                <div class="o-layout_item u-1/3@from-medium u-anim-scroll -parent">
+                                    Салбартаа 10 гаран жилийн туршлагатай мэргэжилтэн нийт багш нарын тал хувь нь байдаг.
+                                </div>
+                                <div class="o-layout_item u-2/3@from-medium u-anim-scroll -parent -delay-1">
+                                    <p class="c-content-statistic_heading_text">
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-content-statistic_stats -blue">
+                            <div class="c-content-statistic_stats_inner">
+                                <svg version="1.1" class="c-content-statistic_stats_pourcentage"
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     x="0px" y="0px"
+                                     viewBox="0 0 36 36" style="enable-background:new 0 0 36 36;" xml:space="preserve">
+                                                <path
+                                                        d="M18 2.0845
+                                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                        stroke-dasharray="50, 100"
+                                                />
+                                            </svg>
+                                <div class="c-content-statistic_stats_circle">
+                                    <div class="c-content-statistic_stats_circle_bg"></div>
+                                </div>
+                            </div>
+                            <div class="c-content-statistic_stats_number u-anim-scroll -parent -delay-6">
+                                <div class="c-content-statistic_stats_number_inner">50%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-layout">
+                    <div class="o-layout_item u-1/2@from-medium u-padding" data-scroll>
+                        <div class="c-content-statistic_heading">
+                            <div class="o-layout -gutter-small -top">
+                                <div class="o-layout_item u-1/3@from-medium u-anim-scroll -parent">
+                                    Програм хангамжийн салбарт удирдсан тѳсѳлѳѳ дуусгана гэдэг маш чухал зүйл манай багш хѳгжүүлэгч нар ѳнгѳрсѳн хугацаан дааж авсан тѳслүүдээ 100% дуусгасан.
+                                </div>
+                                <div class="o-layout_item u-2/3@from-medium u-anim-scroll -parent -delay-1">
+                                    <p class="c-content-statistic_heading_text">
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-content-statistic_stats -blue">
+                            <div class="c-content-statistic_stats_inner">
+                                <svg version="1.1" class="c-content-statistic_stats_pourcentage" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 36 36" style="enable-background:new 0 0 36 36;" xml:space="preserve">
+                                                <path
+                                                        d="M18 2.0845
+                                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                        stroke-dasharray="100, 100"
+                                                />
+                                            </svg>
+                                <div class="c-content-statistic_stats_circle">
+                                    <div class="c-content-statistic_stats_circle_bg"></div>
+                                </div>
+                            </div>
+                            <div class="c-content-statistic_stats_number u-anim-scroll -parent -delay-6">
+                                <div class="c-content-statistic_stats_number_inner">100%</div>
+                            </div>
+                        </div>
+                    </div>                                <div class="o-layout_item u-1/2@from-medium u-padding" data-scroll>
+                        <div class="c-content-statistic_heading">
+                            <div class="o-layout -gutter-small -top">
+                                <div class="o-layout_item u-1/3@from-medium u-anim-scroll -parent">
+                                    Манай багш нарын амжилттай хэрэгжүүлсэн тѳслүүд нь 4 жилийн туршид л 127 хүрсэн байна.
+                                </div>
+                                <div class="o-layout_item u-2/3@from-medium u-anim-scroll -parent -delay-1">
+                                    <p class="c-content-statistic_heading_text"> </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-content-statistic_stats">
+                            <h3 class="c-content-statistic_stats_text u-anim-scroll -parent -delay-3">+127</h3>
+                        </div>
+                    </div>                        </div>
+
+            </section>
+
+        </section>
+
+
+        <footer data-scroll-section class="c-footer" data-scroll data-scroll-call="toggleFooter,Scroll"
+                data-scroll-repeat data-scroll-offset="0">
+            <div class="c-footer_cta u-padding u-border-bottom" data-scroll>
+                <span class="c-bleam" data-scroll data-scroll-repeat>
+                    <span class="c-bleam_wrap -bottom"></span>
+                </span>
+                <div class="o-layout -gutter-small u-padding-small-top@to-medium">
+                    <div class="c-footer_col o-layout_item u-6/16@from-medium">
+                        <p class="c-heading -h2 u-anim-scroll -parent -delay-2">
+                            Холбоо барих
+                        </p>
+                        <a href="{{ path('contact_index') }}"
+                           class="c-button -hover-white -white u-margin-small-y u-anim-scroll -parent -delay-3">
+                            <span class="c-button_label_wrap">
+                                <span class="c-button_label">
+                                    БИДНИЙ НЭГ БОЛОХЫГ ХҮСВЭЛ
+                                </span>
+                            </span>
+                            <span class="c-button_icon_wrap">
+                                <span class="c-button_icon">
+                                    <svg role="img"><use
+                                                xlink:href="assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="c-footer_col o-layout_item u-6/16@from-medium">
+                        <div class="c-newsletter" data-scroll>
+                            <p class="c-heading -h2 u-anim-scroll -parent -delay-3">
+                                IO <br>талаар мэдээллийг<br>авах уу?
+                            </p>
+                            <form
+                                    class="c-form c-newsletter_form u-anim-scroll -parent -delay-4"
+                                    method="post"
+                                    action="https://vooban.com/api/pardot-form"
+                                    data-load="false"
+                                    data-module-form
+                                    data-form-confirm-message="Thanks for subscribing!"
+                                    data-form-error-message="Thanks for subscribing!"
+                            >
+                                <div class="c-form_inner c-newsletter_form_input_wrap">
+                                    <label for="email" class="u-screen-reader-text">Email</label>
+                                    <input class="c-newsletter_form_input" type="email" name="EMAIL" id="email"
+                                           placeholder="name@email.com" required>
+                                    <button class="c-newsletter_form_submit" type="submit" aria-label="Submit">
+                                        <span class="c-newsletter_form_submit_icon">
+                                            <svg role="img"><use href="assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                        </span>
+                                        <div class="c-form_button_loader">
+                                            <div class="c-form_button_loader_item"></div>
+                                            <div class="c-form_button_loader_item"></div>
+                                            <div class="c-form_button_loader_item"></div>
+                                            <div class="c-form_button_loader_item"></div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div class="c-form_feedback -small" data-form="feedback"></div>
+
+                                <input type="hidden" name="url" value="">
+                                <input type="hidden" class="js-recaptcha-response" name="g-recaptcha-response" value="">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="c-footer_col o-layout_item u-4/16@from-medium">
+                        <div class="o-layout -middle">
+                            <div class="o-layout_item u-2/3">
+                                <ul class="c-socials">
+                                    <li class="c-socials_item u-anim-scroll -parent -delay-4">
+                                        <a href="https://www.facebook.com/io.institute" target="_blank" rel="noopener">
+                                            <svg role="img">
+                                                <use href="assets/images/sprite.svg#facebook"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="c-socials_item u-anim-scroll -parent -delay-5">
+                                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                                            <svg role="img">
+                                                <use href="assets/images/sprite.svg#instagram"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="c-socials_item u-anim-scroll -parent -delay-6">
+                                        <a href="https://www.linkedin.com/company/ioinstitute/about" target="_blank"
+                                           rel="noopener">
+                                            <svg role="img">
+                                                <use href="assets/images/sprite.svg#linkedin"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-footer_copyrights u-padding-x u-padding-small-y">
+                <div class="o-layout -gutter-small">
+                    <div class="o-layout_item u-1/2@from-small u-3/5to-small">
+                        <div class="c-footer_copyrights_item">
+                            &copy; IOI 2023
+                            -
+                            Website by
+                            <a href="https://iotech.mn/" target="_blank" rel="noopener" class="c-link -hover-white">
+                                <span>IOTechnology</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    </div>
+
+
+    <div class="c-modal-share" data-module-share>
+        <div class="c-modal-share_overlay" data-share="close"></div>
+        <div class="c-modal-share_inner" data-share="inner" tabindex="-1">
+            <ul class="c-modal-share_list">
+                <li>
+                    <button class="c-modal-share_btn" data-share="share" data-share-platform="facebook">
+                        <svg role="img"><use xlink:href="../assets/images/sprite.svg#facebook"></use></svg>
+                        <span>Share on Facebook</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="c-modal-share_btn" data-share="share" data-share-platform="twitter" data-share-text="Careers — Vooban">
+                        <svg role="img"><use xlink:href="../assets/images/sprite.svg#twitter"></use></svg>
+                        <span>Share on Twitter</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="c-modal-share_btn" data-share="copylink" data-share-text="Link copied!">
+                        <svg role="img"><use xlink:href="../assets/images/sprite.svg#sheet"></use></svg>
+                        <span>Copy the link</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="c-modal-share_close" data-share="close" aria-label="Close">
+                <svg role="img"><use xlink:href="../assets/images/sprite.svg#cross"></use></svg>
+            </button>
+        </div>
+    </div>
+    <div id="g-recaptcha-challenge" class="g-recaptcha" data-sitekey="6Le72_8ZAAAAAEY2wrY9BSBhZPEp0fy1fl7Dm4AR" data-size="invisible" data-callback="submitRecaptchaForm" data-error-callback="failedRecaptchaForm"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+{% include 'inc/flashmsg.html.twig' %}
+{% endblock %}
