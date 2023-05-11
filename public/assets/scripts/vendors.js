@@ -2324,7 +2324,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 		}, setHistoryPopState: function () {
 			this.history.paths = pe.getPathValues(), this.history.scrollToSlide(this.params.speed, this.history.paths.value, !1)
 		}, getPathValues: function () {
-			var e = t.location.pathname.slice(1).split(/).filter((function (e) {
+			var e = t.location.pathname.slice(1).split('/').filter((function (e) {
 				return "" !== e
 			})), i = e.length;
 			return {key: e[i - 2], value: e[i - 1]}
@@ -8300,7 +8300,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 			return r.d(e, "a", e), e
 		}, r.o = function (t, e) {
 			return Object.prototype.hasOwnProperty.call(t, e)
-		}, r.p = /, r(r.s = 3)
+		}, r.p = "/", r(r.s = 3)
 	}({
 		3: function (t, e, r) {
 			"use strict";
@@ -8916,7 +8916,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 			return r.d(t, "a", t), t
 		}, r.o = function (n, t) {
 			return Object.prototype.hasOwnProperty.call(n, t)
-		}, r.p = /, r(r.s = 2)
+		}, r.p = "/", r(r.s = 2)
 	}([function (n, t, r) {
 		"use strict";
 		r.r(t), function (n) {
