@@ -1,110 +1,68 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- meta tags -->
-        <meta charset="utf-8">
-        <meta name="keywords" content="IOI, IOTech, UFE, Technology, Institute, Education, UI, UX, Graphic" />
-        <meta name="description" content="Дэлхийд өрсөлдөхүйц чадвар бүхий технологийн мэргэжилтнийг бэлтгэх
-Мэдээллийн технологид суурилсан төсөл хөтөлбөрүүдийг олон улсын жишигт нийцүүлэн гүйцэтгэх" />
-        <meta name="author" content="www.ioi.mn" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html data-template="home" data-theme="blue" lang="en" class="has-no-js">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <!-- Title -->
-        <title>{% block title %} IO Institute {% endblock %}</title>
+    <base>
+    <link rel="canonical" href="/"/>
 
-        <!-- favicon icon -->
-        <link rel="shortcut icon" href="{{ asset('global_assets/images/favicon.ico') }}" />
+    <title>Home — IOInstitute</title>
 
-        <!-- inject css start -->
+    <link rel="alternate" hreflang="en" href="/">
 
-        <!--== bootstrap -->
-        <link href="{{ asset('global_assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Дэлхийд өрсөлдөхүйц чадвар бүхий технологийн мэргэжилтнийг бэлтгэх
+Мэдээллийн технологид суурилсан төсөл хөтөлбөрүүдийг олон улсын жишигт нийцүүлэн гүйцэтгэх">
 
-        <!--== animate -->
-        <link href="{{ asset('global_assets/css/animate.css') }}" rel="stylesheet" type="text/css" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.html">
+    <meta property="og:site_name" content="IOInstitute">
+    <meta property="og:title" content="Home">
+    <meta property="og:image" content="{{ asset('uploads/metadata/images/meta-og.png') }}">
+    <meta property="og:description"
+          content="Дэлхийд өрсөлдөхүйц чадвар бүхий технологийн мэргэжилтнийг бэлтгэх
+Мэдээллийн технологид суурилсан төсөл хөтөлбөрүүдийг олон улсын жишигт нийцүүлэн гүйцэтгэх">
 
-        <!--== fontawesome -->
-        <link href="{{ asset('global_assets/css/fontawesome-all.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="true">
 
-        <!--== magnific-popup -->
-        <link href="{{ asset('global_assets/css/magnific-popup.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Appearance -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="theme-color" content="#FFFFFF">
 
-        <!--== owl.carousel -->
-        <link href="{{ asset('global_assets/css/owl.carousel.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/favicon-16x16.png') }}">
+    <link rel="mask-icon" href="{{ asset('assets/images/favicons/safari-pinned-tab.svg') }}" color="#5BBAD5">
 
-        <!--== lightslider -->
-        <link href="{{ asset('global_assets/css/lightslider.min.css') }}" rel="stylesheet" type="text/css" />
+    <link id="stylesheet" rel="stylesheet" href="{{ asset('assets/styles/main0feb.css?v=2053780728') }}" media="print"
+          onload="this.media='all'; this.onload=null; this.isLoaded=true">
+    <!-- Styles -->
+    <style media="all">
+        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
-        <!--== spacing -->
-        <link href="{{ asset('global_assets/css/spacing.css') }}" rel="stylesheet" type="text/css" />
-
-        <!--== base -->
-        <link href="{{ asset('global_assets/css/base.css') }}" rel="stylesheet" type="text/css" />
-
-        <!--== shortcodes -->
-        <link href="{{ asset('global_assets/css/shortcodes.css') }}" rel="stylesheet" type="text/css" />
-
-        <!--== style -->
-        <link href="{{ asset('global_assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-
-        <!--== responsive -->
-        <link href="{{ asset('global_assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
-
-        <!-- inject css end -->
-
-
-        <!-- inject js start -->
-
-        <!--== jquery -->
-        <script src="{{ asset('global_assets/js/theme.js') }}"></script>
-
-        <!--== owl-carousel -->
-        <script src="{{ asset('global_assets/js/owl-carousel/owl.carousel.min.js') }}"></script>
-
-        <!--== magnific-popup -->
-        <script src="{{ asset('global_assets/js/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-
-        <!--== isotope -->
-        <script src="{{ asset('global_assets/js/isotope/isotope.pkgd.min.js') }}"></script>
-
-        <!--== counter -->
-        <script src="{{ asset('global_assets/js/counter/counter.js') }}"></script>
-
-        <!--== countdown -->
-        <script src="{{ asset('global_assets/js/countdown/jquery.countdown.min.js') }}"></script>
-
-        <!--== particles -->
-        <script src="{{ asset('global_assets/js/particles.js') }}"></script>
-
-        <!--== parallaxie -->
-        <script src="{{ asset('global_assets/js/parallaxie.js') }}"></script>
-
-        <!--== lightslider -->
-        <script src="{{ asset('global_assets/js/lightslider.js') }}"></script>
-
-        <!--== typer -->
-        <script src="{{ asset('global_assets/js/typer.js') }}"></script>
-
-        <!--== tilt jquery -->
-        <script src="{{ asset('global_assets/js/tilt.jquery.js') }}"></script>
-
-        <!--== contact-form -->
-        <script src="{{ asset('global_assets/js/contact-form/contact-form.js') }}"></script>
-
-        <!--== wow -->
-        <script src="{{ asset('global_assets/js/wow.min.js') }}"></script>
-
-        <!--== theme-script -->
-        <script src="{{ asset('global_assets/js/theme-script.js') }}"></script>
-
-        <!-- inject js end -->
-
+        @font-face {
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
     {% block header %}{% include 'layout/header.html.twig' %} {% endblock %}
        {% block body %}{% endblock %}
     {% block footer %}{% include 'layout/footer.html.twig' %}{% endblock %}
+
+    <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js"
+            crossorigin="anonymous"></script>
+    <script nomodule
+            src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.remove%2CElement.prototype.append%2Cfetch%2CCustomEvent%2CElement.prototype.matches%2CNodeList.prototype.forEach%2CAbortController"
+            crossorigin="anonymous"></script>
+
+    <script src="{{ asset('assets/scripts/vendors0feb.js?v=2053780728') }}" defer></script>
+    <script src="{{ asset('assets/scripts/app0feb.js?v=2053780728') }}" defer></script>
     {% block javascripts %}
 
     {% endblock %}

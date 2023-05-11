@@ -3,611 +3,940 @@
 {% block title %}Нүүр хуудас{% endblock %}
 
 {% block body %}
-        <!--hero section start-->
 
-        <section class="banner position-relative fullscreen-banner dark-bg p-0" data-bg-img="{{ asset('global_assets/images/pattern/02.png') }}">
-            <div class="hero-animation"> <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="hero-text"> <span>A</span>
-                <span>I</span>
-                <span>O</span>
-                <span>J</span>
-                <span>S</span>
-                <span>U</span>
-                <span>X</span>
-            </div>
-            <div class="align-center pt-0 b-pl">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5">
-                            <div class="bnr-title large">WE</div>
+
+        <a href=/contact-us class="c-talk-button -fixed" data-module-talk-button>
+            Talk
+            <span class="c-talk-button_background">
+            <svg role="img"><use xlink:href="assets/images/sprite.svg#shape"></use></svg>
+        </span>
+            <span class="c-talk-button_slider swiper-container" data-talk-button="slider">
+            <span class="swiper-wrapper">
+                <div class="c-talk-button_slider_item swiper-slide">
+                    <svg role="img"><use xlink:href="assets/images/sprite.svg#talk"></use></svg>
+                </div>
+                <div class="c-talk-button_slider_item swiper-slide">
+                    <svg role="img"><use xlink:href="assets/images/sprite.svg#talk"></use></svg>
+                </div>
+            </span>
+        </span>
+        </a>
+        <p class="o-scroll_indicator u-text-label">Доошоо</p>
+        <main class="o-scroll" data-module-scroll="main">
+
+            <header data-scroll-section class="c-header">
+                <div
+                        class="o-layout -middle"
+                        data-scroll
+                        data-scroll-id="header"
+                        data-scroll-offset="100%, 0"
+                        data-scroll-repeat
+                        data-scroll-call="toggleHeaderProgress, Scroll"
+                        data-module-header-progress
+                >
+                    <div class="o-layout_item u-1/2@from-small u-3/5@to-small">
+                        <a href="index.html" class="c-header_logo" data-scroll data-scroll-speed="2"
+                           data-scroll-position="top">
+                            <svg class="u-none@from-medium" role="img"><title>Institute</title>
+                                <use href="assets/images/sprite.svg#logo-figure"></use>
+                            </svg>
+                            <span class="u-screen-reader-text">Institute</span>
+                        </a>
+                        <button class="c-header_button u-none@from-medium" arial-label="Menu" type="button"
+                                data-module-nav-button>
+                            <span></span>
+                        </button>
+                    </div>
+                    <div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right">
+                        <a href=/contact-us class="c-header_cta">
+                            Холбоо барих
+                        </a>
+                    </div>
+                </div>
+
+            </header>
+            <section data-scroll-section>
+                <header class="c-home" data-scroll>
+                    <div class="c-home_layout o-layout -bottom" id="home">
+                        <div class="c-home_layout_item -title o-layout_item u-2/3@from-medium">
+                            <div class="c-home_label">Боломжоо <br>ашигла</div>
+                            <h1 class="c-home_title c-heading -h1 -huge -uppercase">
+                            <span class="c-home_title_line" data-scroll data-scroll-speed="-4" data-scroll-delay="0.1"
+                                  data-scroll-direction="horizontal" data-scroll-target="#home"
+                                  data-scroll-position="top">
+                                <span class="c-home_title_line_inner">
+                                    Таныг
+                                </span>
+                            </span>
+                                <span class="c-home_title_line" data-scroll data-scroll-speed="-5" data-scroll-delay="0.2"
+                                      data-scroll-direction="horizontal" data-scroll-target="#home"
+                                      data-scroll-position="top">
+                                <span class="c-home_title_line_inner">
+                                   	ирээдүйрүү
+                                </span>
+                            </span>
+                                <span class="c-home_title_line" data-scroll data-scroll-speed="-2.5"
+                                      data-scroll-direction="horizontal" data-scroll-target="#home"
+                                      data-scroll-position="top">
+                                <span class="c-home_title_line_inner">
+								хөтөлнө
+                                </span>
+                            </span>
+
+
+                            </h1>
+                            <div class="c-home_bleam_wrap">
+                                <div class="c-home_bleam"></div>
+                            </div>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="bnr-title text-lg-left letter-space-1">ARE IO.</div>
+                        <div class="c-home_layout_item -content o-layout_item u-1/3@from-medium">
+                            <div class="c-home_content">
+                                <p class="c-home_content_text">
+                                    Бид ѳѳрсдийн оюутнууддаа зөвхөн мэргэжлийн онол болон практикт суурилсан хѳтѳлбѳрийг
+                                    санал болгодог. Програм хангамжийн мэргэжилтэн болоход шаардлагатай чухал мэдлэгийг
+                                    агуулсан хичээлийн хөтөлбөрөөр хичээллэх ба бусад шаардлагагүй хичээл ордоггүйгээрээ
+                                    онцлогтой̆.
+                                </p>
+                                <a href="#home-content" class="c-button -hover-aqua" data-scroll-to>
+                                <span class="c-button_label_wrap">
+                                    <span class="c-button_label">
+                                        Цааш үзэх
+                                    </span>
+                                </span>
+                                    <span class="c-button_icon_wrap">
+                                    <span class="c-button_icon">
+                                        <svg role="img"><use
+                                                    xlink:href="assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                    </span>
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section class="c-video -home">
+                    <div class="c-video_poster_wrap">
+                        <div class="c-video_poster" data-scroll data-scroll-speed="-4">
+                            <div class="c-video_poster_bg" data-scroll data-scroll-call="lazyLoad, Scroll"
+                                 data-src="uploads/placeholders/video.jpg"></div>
+                        </div>
+                    </div>
+
+                    <button class="c-video_button" type="button" data-module-trigger-popup data-provider="youtube"
+                            data-id="8TG5UrL9H-w">
+                        <span class="c-video_button_label -left u-text-label">Намайг</span>
+                        <span class="c-video_button_icon">
+                        <span class="c-video_button_shape">
+                            <svg role="img"><use xlink:href="assets/images/sprite.svg#shape"></use></svg>
+                        </span>
+                        <span class="c-video_button_icon_play">
+                            <svg role="img"><use xlink:href="assets/images/sprite.svg#play"></use></svg>
+                        </span>
+                    </span>
+                        <span class="c-video_button_label -right u-text-label">үз</span>
+                    </button>
+                </section>
+                <section class="c-home-content" id="home-content">
+                    <div class="c-indicator u-text-aqua">
+                        01
+                    </div>
+                    <div class="o-layout -reverse -bottom">
+                        <div class="c-home-content_layout_item -main o-layout_item u-2/3@from-medium u-padding" data-scroll>
+                        <span class="c-bleam" data-scroll>
+                            <span class="c-bleam_wrap -left"></span>
+                        </span>
+                            <h2 class="c-heading -h2 -indent c-home-content_title u-anim-scroll" data-scroll>Эрчимжүүлсэн
+                                Хѳтѳлбѳр</h2>
+
+
+                        </div>
+                        <div class="c-home-content_layout_item -content o-layout_item u-1/3@from-medium u-padding u-anim-scroll"
+                             data-scroll>
+                            <p>Эрчимжүүлсэн 1 жилийн хѳтѳлбѳрийн хичээлүүд нь бүгд хоорондоо уялдаа холбоотойгоор заагддаг
+                                бөгөөд анхан шатнаас нь эхлээд тѳгсѳлтийн ажил хүртэл онол, практик хослуулан хичээллэдэг.
+                                Ингэснээр сурагчид маань мэдлэгийг илүү цэгцтэй, системтэйгээр олж авах боломж нь бүрддэг
+                                билээ.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+
+            <section data-scroll-section>
+                <div class="o-layout u-border-top u-overflow">
+                    <div class="o-layout_item">
+                        <div class="c-carousel-wide" data-module-carousel-wide data-scroll
+                             data-scroll-call="inview, CarouselWide">
+                            <h2 class="u-screen-reader-text">Nos bureaux</h2>
+
+                            <div class="c-carousel-wide_static">
+                                <div class="c-carousel-wide_static_padratio">
+                                    <div class="c-carousel-wide_static_wrapper">
+                                        <div class="c-carousel-wide_static_inner">
+                                            <div class="c-carousel-wide_pagination || swiper-pagination"
+                                                 data-carousel-wide="pagination"></div>
+
+                                            <div class="c-carousel-wide_controls || c-carousel_controls" data-scroll
+                                                 data-carousel-wide="controls">
+                                                <button class="c-carousel_controls_button -prev u-anim-scroll -parent"
+                                                        type="button" data-carousel-wide="prev">
+                                                    <span class="u-screen-reader-text">Précédente</span>
+                                                    <svg role="img">
+                                                        <use xlink:href="assets/images/sprite.svg#arrow-left"></use>
+                                                    </svg>
+                                                </button>
+                                                <button class="c-carousel_controls_button -next u-anim-scroll -parent"
+                                                        type="button" data-carousel-wide="next">
+                                                    <span class="u-screen-reader-text">Suivante</span>
+                                                    <svg role="img">
+                                                        <use xlink:href="assets/images/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="c-carousel-wide_slider swiper-container" data-carousel-wide="carousel">
+                                <div class="swiper-wrapper">
+
+                                    <div class="c-carousel-wide_slide || swiper-slide || u-border-right"
+                                         data-carousel-wide="item">
+                                        <article class="c-tile-carousel-wide">
+                                            <div class="c-tile-carousel-wide_inner">
+                                                <div class="c-tile-carousel-wide_visual" data-carousel-wide="visual">
+                                                    <figure class="c-figure">
+                                                        <img
+                                                                class="swiper-lazy"
+                                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1810 1020'%3E%3C/svg%3E"
+                                                                data-src="uploads/openings/IOXUFE.jpg"
+                                                                alt="1+3"
+                                                                width="768"
+                                                                height="458"
+                                                        >
+                                                    </figure>
+                                                </div>
+
+                                                <div class="c-tile-carousel-wide_content">
+                                                    <div class="c-tile-carousel-wide_content_inner">
+                                                        <h2 class="c-tile-carousel-wide_title" style="color: white">IO x UFE /1+3/</h2>
+                                                        <div class="c-tile-carousel-wide_text || o-wysiwyg">
+
+                                                            <p>1 жил IO-д сураад Санхүү эдийн засгийн их сургуульд 3 жил үргэлжлүүлэн суралцаж тѳгсѳх.</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="c-carousel-wide_slide || swiper-slide || u-border-right"
+                                         data-carousel-wide="item">
+                                        <article class="c-tile-carousel-wide">
+                                            <div class="c-tile-carousel-wide_inner">
+                                                <div class="c-tile-carousel-wide_visual" data-carousel-wide="visual">
+                                                    <figure class="c-figure">
+                                                        <img
+                                                                class="swiper-lazy"
+                                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1810 1020'%3E%3C/svg%3E"
+                                                                data-src="uploads/openings/IOXAustralia.jpg"
+                                                                alt=""
+                                                                width="768"
+                                                                height="458"
+                                                        >
+                                                    </figure>
+                                                </div>
+
+                                                <div class="c-tile-carousel-wide_content">
+                                                    <div class="c-tile-carousel-wide_content_inner">
+                                                        <h2 class="c-tile-carousel-wide_title">IO x Australia </h2>
+                                                        <div class="c-tile-carousel-wide_text || o-wysiwyg">
+                                                            <p>1 жил IO-д сураад Австрали улсын 50 гаруй коллежуудаас сонгоно 2 жил үргэлжлүүлэн суралцаж
+                                                                тѳгсѳх.</p>
+                                                            <p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+
+                                    <div class="c-carousel-wide_slide || swiper-slide || u-border-right"
+                                         data-carousel-wide="item">
+                                        <article class="c-tile-carousel-wide">
+                                            <div class="c-tile-carousel-wide_inner">
+                                                <div class="c-tile-carousel-wide_visual" data-carousel-wide="visual">
+                                                    <figure class="c-figure">
+                                                        <img
+                                                                class="swiper-lazy"
+                                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 '%3E%3C/svg%3E"
+                                                                data-src="uploads/openings/IOXIOTECH.jpg"
+                                                                width="768"
+                                                                height="458"
+                                                        >
+                                                    </figure>
+                                                </div>
+
+                                                <div class="c-tile-carousel-wide_content">
+                                                    <div class="c-tile-carousel-wide_content_inner">
+                                                        <h2 class="c-tile-carousel-wide_title">IO x IOTech</h2>
+                                                        <div class="c-tile-carousel-wide_text || o-wysiwyg">
+                                                            <p>1 жил манайд сураад IOTECH компанид үргэлжлүүлэн ажиллах.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-left h-100 d-flex align-items-center justify-content-center">
-                <div class="hero-social text-center">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="https://www.facebook.com/io.institute"> <i class="fab fa-facebook-f"></i>
+
+                <div class="u-padding-small || u-border-top || u-text-white">
+                <span class="c-bleam" data-scroll data-scroll-repeat>
+                    <span class="c-bleam_wrap -top"></span>
+                </span>
+                </div>
+            </section>
+
+            <section data-scroll-section>
+            <span class="c-bleam" data-scroll data-scroll-repeat>
+                <span class="c-bleam_wrap -top"></span>
+            </span>
+                <div class="c-rail || u-border-top" data-scroll data-scroll-repeat data-scroll-offset="0">
+                    <div class="c-rail_inner">
+                        <div class="c-rail_item">
+                            <h2 class="c-rail_heading -h1 c-rail_title" data-module-split-chars>
+                                Жилийн хугацаанд бид юу сурч чадах вэ?
+                            </h2>
+                        </div>
+                        <div class="c-rail_item">
+                            <h2 class="c-rail_heading -h1 c-rail_title" data-module-split-chars aria-hidden="true">
+                                Жилийн хугацаанд бид юу сурч чадах вэ?
+                            </h2>
+                        </div>
+                        <div class="c-rail_item">
+                            <h2 class="c-rail_heading -h1 c-rail_title" data-module-split-chars aria-hidden="true">
+                                Жилийн хугацаанд бид юу сурч чадах вэ?
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section>
+                <section class="c-carousel u-border-bottom" data-module-carousel data-carousel-controls-top="true"
+                         data-scroll data-scroll-call="inview, Carousel">
+				<span class="o-trigger -top" data-scroll data-scroll-call="updateTheme,Scroll" data-scroll-repeat
+                      data-theme="light" data-scroll-offset="0"></span>
+                    <div class="c-indicator u-text-blue">
+                        02
+                    </div>
+                    <div class="c-carousel_wrap">
+                        <div class="o-layout -bottom -reverse">
+                            <div class="c-carousel_slideshow_wrap o-layout_item u-2/3@from-medium ">
+                                <div class="c-carousel_controls" data-scroll data-carousel="controls">
+                                    <button class="c-carousel_controls_button -prev u-anim-scroll -parent" type="button"
+                                            data-carousel="prev">
+                                        <span class="u-screen-reader-text">Previous</span>
+                                        <svg role="img">
+                                            <use xlink:href="assets/images/sprite.svg#arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="c-carousel_controls_button -next u-anim-scroll -parent" type="button"
+                                            data-carousel="next">
+                                        <span class="u-screen-reader-text">Next</span>
+                                        <svg role="img">
+                                            <use xlink:href="assets/images/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="c-carousel_slideshow u-padding-x">
+                                    <div class="c-carousel_slideshow_container swiper-container" data-carousel="slideshow">
+                                        <div class="c-carousel_slideshow_wrapper swiper-wrapper">
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/1.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/1.jpg"
+                                                             alt="" width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Програмчлалын Үндэс
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Програмчлалын хэлний зарчим, #javascript хэлний онцлог давуу талуудыг судалж, програм бичих, програмчлалын бодлого бодох суурь мэдлэг чадвар олгох зорилготой.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#"
+                                                   class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 580'%3E%3C/svg%3E"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/2.jpg"
+                                                             alt="" width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Өгөгдлийн Сангийн Зохиомж
+
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Бодит орчны ямар ч биет болон биет бус зүйлсийг илэрхийлэх өгөгдлийн сангийн архитектурыг зохиомжлох чадварыг олгох зорилготой.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/3.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/3.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Веб Хөгжүүлэлтийн Үндэс
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Веб түүний бүтэц зохион байгуулалтын үндсэн ойлголтуудыг олгохоос гадна веб хөгжүүлэгчийн зайлшгүй мэдэх ёстой зохион байгуулалтын арга, техник, технологиудыг эзэмшүүлэх зорилготой.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#"
+                                                   class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/4.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/4.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Алгоритм Ба Өгөгдлийн Бүтэц
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Энэхүү хичээл нь програм зохиох буюу кодчилолын суурь чадварыг хөгжүүлэх, үндсэн арга техникийг эзэмшүүлэх зорилготой
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#"
+                                                   class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/5.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/5.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Объект Хандалтат Програмчлал
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Програмыг объект хандалтат технологиор програмчлах буюу бодит асуудлын шийдэлд объект хандалтатын давуу талуудыг хэрхэн зөв, оновчтой ашиглах чадварыг эзэмшүүлэх зорилготой.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/6.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/6.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Мобайл Програмчлал
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Гар утасны аппликейшны ерөнхий бүтэц, зохион байгуулалтын суурь ойлголтуудыг авч сүүлийн үед эрэлттэй байгаа мобайл хөгжүүлэлтийн фреймворк болох #flutter -ийг ашиглан нэг кодыг #android болон #ios аппликейшн болгох чадварыг эзэмшүүлэх зорилготой.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/7.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/7.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Backend Хөгжүүлэлт
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Энэ хичээлээр веб програмын сервер талын хөгжүүлэлт хийхэд шаардлагатай програмчлалын суурь арга, технологийг ашиглах чадварыг эзэмшүүлэх чадварыг олгох зорилготой.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/8.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/8.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                UI/UX Дизайн
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Энэ хичээлээр технологийн бүтээгдэхүүн болох гар утасны аппликейшн, веб програмын дизайныг эхнээс дуустал бүрэн зохиомжлон гаргаж сурна.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/9.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/9.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Frontend Хөгжүүлэлт
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Хичээлийн зорилго нь Next.js фреймворкыг ашиглан вебийн фронт хэсгийн хөгжүүлэлт хийж сурах мөн фреймворк ашиглан веб хөгжүүлэлт хийхийн давуу талыг ойлгуулахад оршино.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="c-carousel_item swiper-slide">
+                                                <a href="#" class="c-carousel_item_inner">
+                                                    <figure class="c-figure -margin-bottom" data-carousel="image">
+                                                        <img src="uploads/services/10.jpg"
+                                                             class="swiper-lazy"
+                                                             data-src="uploads/services/10.jpg" alt=""
+                                                             width="460" height="580">
+                                                    </figure>
+                                                    <div class="c-carousel_item_content" data-scroll>
+                                                        <div class="u-anim-scroll -parent -delay-3">
+                                                            <h3 class="c-heading -h3 c-carousel_item_title ">
+                                                                Төслийн Ажил
+                                                            </h3>
+                                                        </div>
+                                                        <p class="u-anim-scroll -parent -delay-4">
+                                                            Технологийн төсөл хэрхэн, ямар шат дамжлагаар дамжин бүтээгдэхүүн болдог гэсэн бодит мэдлийг олж авна.
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o-layout_item u-1/3@from-medium u-padding">
+                                <h2 class="c-carousel_title c-heading -h2 u-anim-scroll" data-scroll data-offset="0">
+                                    1 жилд багтааж сурах<br> хичээлүүд
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section data-scroll-section>
+                <section class="c-content-image-text">
+                    <div class="c-content-image-text_image_wrap">
+                        <div class="c-content-image-text_image" data-scroll data-scroll-speed="-3"
+                             data-scroll-call="lazyLoad, Scroll"
+                             data-src="uploads/services/iotech_.jpg"></div>
+                    </div>
+                    <div class="o-layout u-border-bottom -flex@from-medium">
+                        <div class="c-content-image-text_col -offset o-layout_item u-1/2@from-medium -no-padding-bottom u-relative u-border-right@from-medium u-border-bottom@to-medium">
+                        <span class="c-bleam u-none@to-medium" data-scroll data-scroll-repeat>
+                            <span class="c-bleam_wrap -right"></span>
+                        </span>
+                            <span class="c-bleam u-none@from-medium" data-scroll data-scroll-repeat>
+                            <span class="c-bleam_wrap -bottom"></span>
+                        </span>
+                            <div class="o-wysiwyg u-padding">
+                                <h2>
+                                    Хѳтѳлбѳрийг<br/>
+                                    хамтран<br/>
+                                    зохион<br/>
+                                    байгуулагчид<br/>
+                                </h2>
+                            </div>
+                            <div data-module-slider-logo data-scroll data-scroll-call="inview, SliderLogo">
+                                <div class="c-small-slider swiper-container" data-slider-logo="slideshow">
+                                    <div class="swiper-wrapper">
+                                        <div class="c-small-slider_item swiper-slide">
+                                            <div class="c-small-slider_item_inner">
+                                                <img class="swiper-lazy" data-src="uploads/clients/partner1.jpg"
+                                                     width="400" height="400">
+                                            </div>
+                                        </div>
+                                        <div class="c-small-slider_item swiper-slide">
+                                            <div class="c-small-slider_item_inner">
+                                                <img class="swiper-lazy"
+                                                     data-src="uploads/clients/partner2.jpg"
+                                                     width="400" height="400">
+                                            </div>
+                                        </div>
+                                        <div class="c-small-slider_item swiper-slide">
+                                            <div class="c-small-slider_item_inner">
+                                                <img class="swiper-lazy"
+                                                     data-src="uploads/clients/partner3.jpg"
+                                                     width="400" height="400">
+                                            </div>
+                                        </div>
+                                        <div class="c-small-slider_item swiper-slide">
+                                            <div class="c-small-slider_item_inner">
+                                                <img class="swiper-lazy"
+                                                     data-src="uploads/clients/partner4.jpg"
+                                                     alt="kruger" width="400" height="400">
+                                            </div>
+                                        </div>
+                                        <div class="c-small-slider_item swiper-slide">
+                                            <div class="c-small-slider_item_inner">
+                                                <img class="swiper-lazy"
+                                                     data-src="uploads/clients/partner5.jpg"
+                                                     width="400" height="400">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c-small-slider_controls" data-scroll>
+                                        <button class="c-small-slider_controls_button" type="button"
+                                                data-slider-logo="prev">
+                                            <span class="u-screen-reader-text">Previous</span>
+                                            <svg role="img">
+                                                <use href="assets/images/sprite.svg#arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="c-small-slider_controls_button" type="button"
+                                                data-slider-logo="next">
+                                            <span class="u-screen-reader-text">Next</span>
+                                            <svg role="img">
+                                                <use href="assets/images/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-content-image-text_col o-layout_item u-1/2@from-medium u-padding u-relative o-wysiwyg">
+                            <p>Ганц хүн айл болдоггүй, ганц мод гал болдоггүй гэж ардын сайхан үг бий. Угтаа энэ үгний цаана л бидний хамтын ажиллагааны амин сүнс оршин буй. Таныг ирээдүйрүү хөтлөх энэхүү гэгээн үйлсэд зөвхөн нэг талын оролцоо хангалтгүй гэдгийг бид гүнээ ухамсарлан ажилладаг.
+
+                                <br/>
+                                <br/>
+                                Залуучууддаа илүү ТОМ БОЛОМЖ атгуулахын тулд манай хамт олон Монгол улсын хамгийн шилдэг их сургууль Санхүү эдийн засгийн сургуультай үйл ажиллагаагаа эхлүүлсэн цагаас хамтран ажилласаар ирсэн. Улмаар олон улсын зах зээлд Монгол инженерүүдийг бэлтгэх, олон улсын үйл ажиллагааг тэлэхээр Австрали улсын Bluewater олон улсын боловсролын байгууллагатай хамтын ажиллагааг эхлүүлээд буй. Эзэмшсэн боловсролоо хүлээн зөвшөөрүүлэн хос мэргэжил эзэмших эсвэл олон улсын их сургуулиудад үргэлжлүүлэн суралцах боломжийг зөвхөн IO технологийн институт танд өгөх болно.
+                                <br/>
+                                <br/>
+                                Технологийн салбар хурдацтай хувьсаж буй одоо үед технологийн болон бизнесийн байгууллагуудад тулгамдаж буй хамгийн том сорилт нь ажиллах хүчний хомсдол. Технологийн компаниуд бид нэг л зүйлийн төлөө зорин тэмүүлж буй язгуур эрх ашгаа тэргүүнд тавин институтийн төгсөгчдөө бодит төсөл дээр ажиллах, дадлага хийх, улмаар ажлын гараагаа эхлүүлдэг байх БОЛОМЖИЙГ олгохоор зорин ажилладаг. Энэ нь нэг талдаа бизнесийн байгууллага, нөгөө талдаа оюутан залууст маань өндөр өгөөжтэй байж технологийн салбарын эко системийг бүрдүүлж байгаа гэдэгт манай хамт олон бүрэн итгэдэг.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="c-case-study-cta u-background-white" data-scroll-section>
+			<span class="o-trigger -top" data-scroll data-scroll-call="updateTheme,Scroll" data-scroll-repeat
+                  data-theme="light" data-scroll-offset="0"></span>
+
+                <div class="c-case-study-cta_visual -offset">
+                    <div class="c-case-study-cta_visual_poster_wrap">
+                        <div class="c-case-study-cta_visual_poster" data-scroll data-scroll-speed="-4"
+                             data-scroll-call="lazyLoad, Scroll" data-src="uploads/case-studies/ufe_.jpg"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-scroll-section>
+                <section class="c-content-text u-background-white">
+                    <div class="o-layout u-border-bottom -flex@from-medium">
+                        <div class="c-content-text_col o-layout_item u-1/2@from-medium u-padding u-relative u-border-right@from-medium u-border-bottom@to-medium">
+                        <span class="c-bleam u-none@to-medium" data-scroll data-scroll-repeat>
+                            <span class="c-bleam_wrap -right"></span>
+                        </span>
+                            <span class="c-bleam u-none@from-medium" data-scroll data-scroll-repeat>
+                            <span class="c-bleam_wrap -bottom"></span>
+                        </span>
+                            <div class="c-content-text_infos">
+                                <h2 class="c-content-text_title c-heading -h2">IO гэдэг утганд Intentionally Outstanding буюу Монголоор ОНДООШИЛ гэх нэршил илүү тохирох байх...</h2>
+                            </div>
+                        </div>
+                        <div class="c-content-text_col o-layout_item u-1/2@from-medium u-padding u-relative o-wysiwyg">
+                            <p>
+                                Амтай болгон л шахуу технологи ярьж байгаа энэ цаг үед чухамдаа яаж бусдаасаа ондоошил үүсгэх вэ? Бидний өмнө нь мэддэг байсан, хийдэг байсан зүйлс бүгд хувьсан өөрчлөгдөж, сурсан мэдсэн зүйлс бүхэн өдөр хоногоор биш цаг, минутаар хуучирч байгаа тийм л үе.
+                                <br/>
+                                <br/>
+                                Технологи зөвхөн гар утас, код эсвэл чип гэдэг ухагдахуунаасаа аль хэдийн салчихсан бидний ажил мэргэжил, хийж чадах зүйлс бүхэн рүү гүн гүнзгий нэвтэрч бүхий л ажил мэргэжил технологиор цэнэглэгдэж, зарим мэргэжил нь бүүр устаж үгүй болж байгаа нь үнэн.
+                                <br/>
+                                <br/>
+                                Тэгвэл үүнийг уншиж байгаа танд болон таны хүүхэд, ах дүүст хандан хэлэхэд "технологи бол ирээдүй". Ямар ч маргаангүй. Хэн технологитой өөрийгөө болон зорилгоо уяж чадна тэр л хүн ОНДООШИЛ үүсгэн бусдаасаа илүү давуу байрлалд шилжих нь гарцаагүй. Тийм ч учраас бид нийгмийн хариуцлагын хүрээнд залуустаа багахан ч гэсэн хөрөнгө оруулах зорилгоор энэхүү сургалтын зохион байгуулж, нэг ч гэсэн ирээдүйг гэрэлтүүлэхээр шийдсэн.
+                                <br/>
+                                <br/>
+                                IO-ийн багш хамт олон маань технологиор дамжуулан ирээдүй болсон залуу үедээ өөрсдийн сурсан мэдсэн бүхнээ хуваалцан Монгол гэдэг нуураас биш Дэлхий гэдэг далайгаас ус хутгахаар зорин ажиллаад хэдийнээ 4 жил болсон байна. Бид сурагчдадаа зөвхөн технологи, хичээл заах бус, тэдэнд хичээвэл болдог, хичээх л юм бол чиний дотор ямар том боломжууд нуугдаж, чамаас гарах гэж тэмүүлж байгаа тэр мэдрэмжийг давхар өгөхөөр зорин ажилладаг юм шүү.
+
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section data-scroll-section>
+                <div class="c-content-quote u-border-bottom c-carousel-quote" data-module-carousel-quote>
+
+                    <div class="c-small-slider_controls c-carousel-quote_controls" data-scroll>
+                        <button class="c-small-slider_controls_button" type="button" data-carousel-quote="prev">
+                            <span class="u-screen-reader-text">Previous</span>
+                            <svg role="img">
+                                <use href="assets/images/sprite.svg#arrow-left"></use>
+                            </svg>
+                        </button>
+                        <button class="c-small-slider_controls_button" type="button" data-carousel-quote="next">
+                            <span class="u-screen-reader-text">Next</span>
+                            <svg role="img">
+                                <use href="assets/images/sprite.svg#arrow-right"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="swiper-container" data-carousel-quote="carousel">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide" data-carousel-quote="item">
+                                <div class="u-padding">
+                                    <div data-swiper-parallax="-300">
+                                        <blockquote class="c-content-quote_blockquote" data-scroll data-scroll-offset="40%"
+                                                    data-module-split data-split-type="lines">
+                                            IO Институт надад код бичих нь амархан гэдгийг заасан
+                                        </blockquote>
+                                    </div>
+                                    <div data-swiper-parallax="-100">
+                                        <p class="u-anim-scroll -delay-8" data-scroll>
+                                            <strong>ТѲГѲЛДѲР</strong> <br>
+                                            IO INSTITUTE 2020 ОНЫ ТѲГСѲГЧ
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-carousel-quote="item">
+                                <div class="u-padding">
+                                    <div data-swiper-parallax="-300">
+                                        <blockquote class="c-content-quote_blockquote" data-scroll data-scroll-offset="40%"
+                                                    data-module-split data-split-type="lines">
+                                            IO-д сурсанаар би олон улсад ажилж буй шинэ технолги дээр ажилж чадна гэдгийг ойлгосон
+                                        </blockquote>
+                                    </div>
+                                    <div data-swiper-parallax="-100">
+                                        <p class="u-anim-scroll -delay-8" data-scroll>
+                                            <strong>ЭНХМАНДАХ</strong> <br>
+                                            IO INSTITUTE 2021 ОНЫ ТѲГСѲГЧ
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-carousel-quote="item">
+                                <div class="u-padding">
+                                    <div data-swiper-parallax="-300">
+                                        <blockquote class="c-content-quote_blockquote" data-scroll data-scroll-offset="40%"
+                                                    data-module-split data-split-type="lines">
+                                            Програм хангамжаар сурсаны давуу тал нь дэс дараатай сэтгэлгээг бий болгодог нь байсан
+                                        </blockquote>
+                                    </div>
+                                    <div data-swiper-parallax="-100">
+                                        <p class="u-anim-scroll -delay-8" data-scroll>
+                                            <strong>ТУЯАЦЭЦЭГ</strong> <br>
+                                            IO INSTITUTE 2022 ОНЫ ТѲГСѲГЧ
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <span class="c-content-quote_icon">
+                    <svg role="img"><use href="assets/images/sprite.svg#quote"></use></svg>
+                </span>
+                </div>
+            </section>
+
+            <section data-scroll-section>
+                <div class="c-cta">
+                    <div class="c-cta_wrap">
+                        <div class="c-cta_inner">
+                            <div class="c-cta_background" data-scroll data-scroll-call="lazyLoad, Scroll"
+                                 data-src="uploads/events/register_.jpg"></div>
+                            <div class="c-cta_content">
+                                <h2 class="c-cta_title c-heading -h2 u-anim-scroll -delay-2" data-scroll>
+                                    Танд үнэхээр програм хангамжийн мэдлэг хэрэгтэй байна уу?
+                                </h2>
+                                <p class="c-cta_text u-anim-scroll -delay-2" data-scroll>
+
+                                </p>
+                                <div class="u-anim-scroll -delay-2" data-scroll>
+                                    <a href=/contact-us class="c-button -hover-white"
+                                       rel="noopener">
+                                            <span class="c-button_label_wrap">
+                                                <span class="c-button_label">
+                                                    Бүртгүүлэх
+                                                </span>
+                                            </span>
+                                        <span class="c-button_icon_wrap">
+                                                <span class="c-button_icon">
+                                                    <svg role="img"><use
+                                                                xlink:href="assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                                </span>
+                                            </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <footer data-scroll-section class="c-footer" data-scroll data-scroll-call="toggleFooter,Scroll"
+                    data-scroll-repeat data-scroll-offset="0">
+                <div class="c-footer_cta u-padding u-border-bottom" data-scroll>
+                <span class="c-bleam" data-scroll data-scroll-repeat>
+                    <span class="c-bleam_wrap -bottom"></span>
+                </span>
+                    <div class="o-layout -gutter-small u-padding-small-top@to-medium">
+                        <div class="c-footer_col o-layout_item u-6/16@from-medium">
+                            <p class="c-heading -h2 u-anim-scroll -parent -delay-2">
+                                Холбоо барих
+                            </p>
+                            <a href=/contact-us
+                               class="c-button -hover-white -white u-margin-small-y u-anim-scroll -parent -delay-3">
+                            <span class="c-button_label_wrap">
+                                <span class="c-button_label">
+                                    БИДНИЙ НЭГ БОЛОХЫГ ХҮСВЭЛ
+                                </span>
+                            </span>
+                                <span class="c-button_icon_wrap">
+                                <span class="c-button_icon">
+                                    <svg role="img"><use
+                                                xlink:href="assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                </span>
+                            </span>
                             </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/io.institute"> <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/channel/UCPJi9mf5pGH7rEZ6DhDQX2w"> <i class="fab fa-youtube"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div> <a href="#program" class="scroll-down-arrow"></a>
-            </div>
-        </section>
-
-        <!--hero section end-->
-
-
-        <!--body content start-->
-
-        <div id="main-page" class="page-content">
-
-            <!--service start-->
-
-            <section class="position-relative" id="program">
-                <div class="bg-effect">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
-                        <path fill="#e1fdf5" d="">
-                            <animate repeatCount="indefinite" attributeName="d" dur="5s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45
-  c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2
-  c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7
-  c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z;
-  M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4
-  c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6
-  c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8
-  C48.9,198.6,57.8,191,51,171.3z;
-  M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45
-  c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2
-  c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7
-  c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z  " />
-                        </path>
-                    </svg>
-                </div>
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 z-index-1">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="featured-item style-1 active">
-                                        <a href="#yearProgram">
-                                            <div class="featured-icon"> <i class="flaticon-idea"></i>
+                        </div>
+                        <div class="c-footer_col o-layout_item u-6/16@from-medium">
+                            <div class="c-newsletter" data-scroll>
+                                <p class="c-heading -h2 u-anim-scroll -parent -delay-3">
+                                    IO <br>талаар мэдээллийг<br>авах уу?
+                                </p>
+                                <form
+                                        class="c-form c-newsletter_form u-anim-scroll -parent -delay-4"
+                                        method="post"
+                                        action="https://vooban.com/api/pardot-form"
+                                        data-load="false"
+                                        data-module-form
+                                        data-form-confirm-message="Thanks for subscribing!"
+                                        data-form-error-message="Thanks for subscribing!"
+                                >
+                                    <div class="c-form_inner c-newsletter_form_input_wrap">
+                                        <label for="email" class="u-screen-reader-text">Email</label>
+                                        <input class="c-newsletter_form_input" type="email" name="EMAIL" id="email"
+                                               placeholder="name@email.com" required>
+                                        <button class="c-newsletter_form_submit" type="submit" aria-label="Submit">
+                                        <span class="c-newsletter_form_submit_icon">
+                                            <svg role="img"><use href="assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                        </span>
+                                            <div class="c-form_button_loader">
+                                                <div class="c-form_button_loader_item"></div>
+                                                <div class="c-form_button_loader_item"></div>
+                                                <div class="c-form_button_loader_item"></div>
+                                                <div class="c-form_button_loader_item"></div>
                                             </div>
-                                            <div class="featured-title">
-                                                <h5>Эрчимжүүлсэн хөтөлбөр</h5>
-                                            </div>
-                                        </a>
-                                        <div class="featured-desc">
-                                            <p>Уламжлалт 4 жилийн хөтөлбөрийг 1 жилд багтаан олгодог онцлогтой.</p>
-                                        </div>
+                                        </button>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 mt-5 mt-md-0">
-                                    <div class="featured-item style-1">
-                                        <div class="featured-icon"> <i class="flaticon-histogram"></i>
-                                        </div>
-                                        <div class="featured-title">
-                                            <h5>Мэргэшсэн хѳтѳлбѳр</h5>
-                                        </div>
-                                        <div class="featured-desc">
-                                            <p>Шинэ технологиудын талаар ахисан шатны мэдлэг олгох зорилготой.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 mt-5">
-                                    <div class="featured-item style-1">
-                                        <a href="{{ path('product_summer') }}">
-                                            <div class="featured-icon"> <i class="flaticon-analytics"></i>
-                                            </div>
-                                            <div class="featured-title">
-                                                <h5>Зуны хѳтѳлбѳр</h5>
-                                            </div>
-                                        </a>
-                                        <div class="featured-desc">
-                                            <p>Програмчлалын анхан болон дунд шатны мэдлэгийг системтэйгээр олгодог онцлогтой.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 mt-5">
-                                    <div class="featured-item style-1">
-                                        <a href="{{ path('product_uiux') }}">
-                                            <div class="featured-icon"> <i class="flaticon-optimization"></i>
-                                            </div>
-                                            <div class="featured-title">
-                                                <h5>UI UX дизайны хөтөлбөр</h5>
-                                            </div>
-                                        </a>
-                                        <div class="featured-desc">
-                                            <p>UI, UX дизайны суурь ойлголтуудыг гурван сарын хугацаанд олгох зорилготой.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mt-5 mt-lg-0">
-                            <div class="section-title">
-                                <h6>ХѲТѲЛБѲР</h6>
-                                <h2 class="title">Та бүхэнд ѳѳрсдийн онцгой <span>Хѳтѳлбѳрийг танилцуулж байна.</span></h2>
-                                <p class="text-black mb-0">Манай хѳтѳлбѳр нь оюутанд зөвхөн мэргэжлийн онол болон практикт суурилсан хичээлийг санал болгодог. Оюутанд мэргэжилтэн болоход шаардлагатай чухал мэдлэгийг агуулсан хичээлийн хөтөлбөрөөр хичээллэх ба бусад шаардлагагүй нэмээлт хичээл ордоггүйгээрээ онцлогтой̆.</p>
-                            </div>
-                            <ul class="list-unstyled list-icon">
-                                <li class="mb-4"><i class="fas fa-check"></i> Эрчимжүүлсэн хөтөлбөр</li>
-                                <li class="mb-4"><i class="fas fa-check"></i> Зуны хѳтѳлбѳр</li>
-                                <li class="mb-4 mb-sm-0"><i class="fas fa-check"></i> Мэргэшсэн хѳтѳлбѳр</li>
-                                <li><i class="fas fa-check"></i> UI UX дизайны хөтөлбөр</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!--service end-->
+                                    <div class="c-form_feedback -small" data-form="feedback"></div>
 
-
-
-
-
-            <section id="yearProgram">
-                <div class="container">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-8 col-md-12">
-                            <div class="section-title">
-                                <h2 class="title">Эрчимжүүлсэн <span>Хѳтѳлбѳр</span></h2>
-                                <p>Эрчимжүүлсэн 1 жилийн хѳтѳлбѳрийн хичээлүүд нь бүгд хоорондоо уялдаа холбоотойгоор заагддаг бөгөөд анхан шатнаас нь эхлээд тѳгсѳлтийн ажил хүртэл онол, практик хослуулан хичээллэдэг. Ингэснээр сурагчид маань мэдлэгийг илүү цэгцтэй, системтэйгээр олж авах боломж нь бүрддэг билээ. </p>
+                                    <input type="hidden" name="url" value="">
+                                    <input type="hidden" class="js-recaptcha-response" name="g-recaptcha-response" value="">
+                                </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/js.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>1.Програмчлалын үндэс</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Програмчлалын хэлний зарчим, #javascript хэлний онцлог давуу талуудыг судалж, програм бичих, програмчлалын бодлого бодох суурь мэдлэг чадвар олгох зорилготой.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3 active">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/postgre.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>2.Өгөгдлийн сангийн зохиомж</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Бодит орчны ямар ч биет болон биет бус зүйлсийг илэрхийлэх өгөгдлийн сангийн архитектурыг зохиомжлох чадварыг олгох зорилготой.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/html.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>3.Веб хөгжүүлэлтийн үндэс</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Веб түүний бүтэц зохион байгуулалтын үндсэн ойлголтуудыг олгохоос гадна веб хөгжүүлэгчийн зайлшгүй мэдэх ёстой зохион байгуулалтын арга, техник, технологиудыг эзэмшүүлэх зорилготой.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/js.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>4. Алгоритм ба өгөгдлийн бүтэц</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Энэхүү хичээл нь програм зохиох буюу кодчилолын суурь чадварыг хөгжүүлэх, үндсэн арга техникийг эзэмшүүлэх зорилготой</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/java.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>5. Объект хандалтат програмчлал</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Програмыг объект хандалтат технологиор програмчлах буюу бодит асуудлын шийдэлд объект хандалтатын давуу талуудыг хэрхэн зөв, оновчтой ашиглах чадварыг эзэмшүүлэх зорилготой.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="c-footer_col o-layout_item u-4/16@from-medium">
+                            <div class="o-layout -middle">
+                                <div class="o-layout_item u-2/3">
+                                    <ul class="c-socials">
+                                        <li class="c-socials_item u-anim-scroll -parent -delay-4">
+                                            <a href="https://www.facebook.com/io.institute" target="_blank" rel="noopener">
+                                                <svg role="img">
+                                                    <use href="assets/images/sprite.svg#facebook"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="c-socials_item u-anim-scroll -parent -delay-5">
+                                            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                                                <svg role="img">
+                                                    <use href="assets/images/sprite.svg#instagram"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="c-socials_item u-anim-scroll -parent -delay-6">
+                                            <a href="https://www.linkedin.com/company/ioinstitute/about" target="_blank"
+                                               rel="noopener">
+                                                <svg role="img">
+                                                    <use href="assets/images/sprite.svg#linkedin"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
 
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/flutter.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
+                                    </ul>
                                 </div>
-                                <div class="featured-title">
-                                    <h5>6. Мобайл програмчлал</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Гар утасны аппликейшны ерөнхий бүтэц, зохион байгуулалтын суурь ойлголтуудыг авч сүүлийн үед эрэлттэй байгаа мобайл хөгжүүлэлтийн фреймворк болох #flutter -ийг ашиглан нэг кодыг #android болон #ios аппликейшн болгох чадварыг эзэмшүүлэх зорилготой.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/node.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>7. Backend хөгжүүлэлт</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Энэ хичээлээр веб програмын сервер талын хөгжүүлэлт хийхэд шаардлагатай програмчлалын суурь арга, технологийг ашиглах чадварыг эзэмшүүлэх чадварыг олгох зорилготой.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/figma.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>8. UI/UX дизайн</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Энэ хичээлээр технологийн бүтээгдэхүүн болох гар утасны аппликейшн, веб програмын дизайныг эхнээс дуустал бүрэн зохиомжлон гаргаж сурна.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/react.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>9. Frontend хөгжүүлэлт</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Хичээлийн зорилго нь Next.js фреймворкыг ашиглан вебийн фронт хэсгийн хөгжүүлэлт хийж сурах мөн фреймворк ашиглан веб хөгжүүлэлт хийхийн давуу талыг ойлгуулахад оршино.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mt-5">
-                            <div class="featured-item style-3">
-                                <div class="featured-icon">
-                                    <img class="img-fluid" src="{{ asset('global_assets/images/pern.png') }}" alt="" style="margin-bottom: 10px;">
-                                    <span class="border-anim"></span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>10. Төслийн ажил</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Технологийн төсөл хэрхэн, ямар шат дамжлагаар дамжин бүтээгдэхүүн болдог гэсэн бодит мэдлийг олж авна.</p>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-
-            <!--case study start-->
-
-            <section id="team" class="theme-bg pb-10" data-bg-img="{{ asset('global_assets/images/bg/08.jpg') }}" style="background-image: url(&quot;global_assets/images/bg/08.jpg&quot;);">
-                <div class="container mb-10">
-                    <div class="row align-items-center">
-                        <div class="col-md-8">
-                            <div class="section-title mb-md-0">
-                                <h3 class="title mb-0">Монголд хамгийн их ашиглагдаж байгаа<span class="font-w-3 text-light"> гар утасны аппликейшн болон вебийн хөгжүүлэлтийг гүйцэтгэсэн 5-15 жилийн туршлагатай багш, хөгжүүлэгчид нар.</span></h3>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-md-center">
-                            <div class="video-btn"> <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=8TG5UrL9H-w"><i class="fas fa-play-circle"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section>
-                <div class="container">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-8 col-12">
-                            <div class="section-title">
-                                <h6>Багш Нар</h6>
-                                <h2 class="title mb-0">Бид мэдлэг<span> чадвараа хуваалцахад бэлэн байна.</span></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 col-12">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/amgaa.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=BS5paeLQt2s" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Энх-Амгалан</a></h5>
-                                    <span>Багш - Алгоритм Ба Өгөгдлийн Бүтэц</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/tulga.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=4y1eJuBhz0A" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Тулга</a></h5>
-                                    <span>Багш - Програмчлалын үндэс</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/tushgee.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=HCWB3XHILj4&t=4s" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Түшиг</a></h5>
-                                    <span>Багш - Объект Хандалтат Програмчлал</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/amraa.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=eXMlEDYUJnA&t=1s" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Энх-Амарбаясгалан</a></h5>
-                                    <span>Багш - Мобайл хѳгжүүлэлт</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/bilgee.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=dyWwYw5XOoA" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Билэгсайхан</a></h5>
-                                    <span>Багш - Веб хѳгжүүлэлтийн үндэс</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/sainaa.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=t3R6xGT181M" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Сайнбаяр</a></h5>
-                                    <span>Багш - UX</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/aso.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=Fs2nf3wEfVw" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Анхбаяр</a></h5>
-                                    <span>Багш - UI</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-4 col-12 mt-5 mt-md-0">
-                            <div class="team-member style-2">
-                                <div class="team-global_assets/images">
-                                    <img class="img-fluid box-shadow" src="{{ asset('global_assets/images/team/burnee.png') }}" alt="">
-                                </div>
-                                <div class="team-social-icon">
-                                    <a class="btn btn-white" href="https://www.youtube.com/watch?v=XapR-8P7tio" target="blank"><span>Бичлэг үзэх<i class="fas fa-plus-square"></i></span></a>
-                                </div>
-                                <div class="team-description">
-                                    <h5><a href="#">Бүрэнхүү</a></h5>
-                                    <span>Багш - Backend хѳгжүүлэлт</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-
-            <!--team end-->
-
-
-            <!--feature start-->
-
-            <section class="position-relative" id="advantage">
-                <div id="particles-js"></div>
-                <div class="container">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-8 col-md-12">
-                            <div class="section-title">
-                                <h6>Бидний давуу тал</h6>
-                                <h2 class="title mb-0">Мэргэжлийн <span>ур чадвар</span></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="featured-item style-2 text-center">
-                                <div class="featured-icon"> <i class="flaticon-ui"></i>
-                                    <span>01</span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>5-15 жилийн туршлагатай багш</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mt-5">
-                            <div class="featured-item style-2 text-center">
-                                <div class="featured-icon"> <i class="flaticon-domain"></i>
-                                    <span>02</span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>Онол, практик хосолсон хѳтѳлбѳр</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mt-5 mt-md-0">
-                            <div class="featured-item style-2 text-center">
-                                <div class="featured-icon"> <i class="flaticon-challenges"></i>
-                                    <span>03</span>
-                                </div>
-                                <div class="featured-title">
-                                    <h5>Мэдээллийн технологийн экосистем</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--feature end-->
-
-            <section class="page-title animatedbg dark-bg text-center" data-bg-img="{{ asset('global_assets/images/pattern/01.png') }}" id="faq">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h1>Түгээмэл асуулт хариулт</h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-12">
-                            <div class="accordion">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6 class="mb-0">
-                                            Эрчимжүүлсэн хѳтѳлбѳр хэзээ элсэлт авч эхлэх вэ ?
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">Намар болон Өвлийн 2 элсэлт авдаг бөгөөд элсэлттэй холбоотой мэдээллийг бидний сошиал хаягуудаас болон утсаар холбогдон авах боломжтой.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mt-md-0 mt-5">
-                            <div class="accordion">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6 class="mb-0">
-                                            Эрчимжүүлсэн хѳтѳлбѳрийн төлбөр хэд вэ ?
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">Нэг жилийн эрчимжүүлсэн хөтөлбөрийн сургалтаар нийт 32 кредитийн хичээл үзэх бөгөөд 1кр төлбөр 163000 төгрөг байна. Сургалтын төлбөрийг 2 хувааж төлөх боломжтой.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mt-5">
-                            <div class="accordion">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6 class="mb-0">
-                                            Хаана хичээллэх вэ ?
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">Санхүү Эдийн Засгийн Их Сургуулийн байранд хичээллэнэ.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mt-5">
-                            <div class="accordion">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6 class="mb-0">
-                                            СЭЗИС-д шилжин суралцах боломжтой юу?
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">Эрчимжүүлсэн хөтөлбөрийн төгсөгчид СЭЗИС-д дэвшин суралцах буюу хоёр дугаар курсээсээ үргэлжлүүлэн суралцах боломжийг олгодог.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-        </div>
-
-        <!--body content end-->
 
 {% endblock %}
 

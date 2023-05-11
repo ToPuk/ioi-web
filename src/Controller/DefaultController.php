@@ -26,4 +26,24 @@ class DefaultController extends AbstractController
 
     }
 
+    /**
+     * @Route("/contact-us", name="contact_us_index")
+     */
+    public function contactUs(Request $request)
+    {
+
+        return $this->render('default/contact.html.twig');
+
+    }
+
+    /**
+     * @Route("/about-us", name="contact_us_index")
+     */
+    public function aboutUs(Request $request)
+    {
+
+        return $this->render('default/contact.html.twig');
+
+    }
+
 }
