@@ -74,10 +74,10 @@
                     <div class="u-padding c-contact_info">
                         <div class="o-layout">
                             <div class="o-layout_item u-1/2@from-tiny u-anim -delay-7">
-                                <a href="tel:18448000027" target="_blank" rel="noopener" class="c-contact_link -hover"><strong>+976 7732 1010</strong></a>
+                                <a href="tel:97677321010" target="_blank" rel="noopener" class="c-contact_link -hover"><strong>+976 7732 1010</strong></a>
                             </div>
                             <div class="o-layout_item u-1/2@from-tiny u-anim -delay-8">
-                                <a href="mailto:hello@vooban.com" target="_blank" rel="noopener" class="c-contact_link -hover">admin@ioi.mn</a>
+                                <a href="mailto:admin@ioi.mn" target="_blank" rel="noopener" class="c-contact_link -hover">admin@ioi.mn</a>
                             </div>
                         </div>
                     </div>
@@ -120,49 +120,41 @@
                             <span class="c-bleam_wrap -left"></span>
                         </span>
                     <div class="u-padding-big">
-                        <form
-                                class="c-form"
-                                method="post"
-                                action="https://vooban.com/api/pardot-form"
-                                data-load="false"
-                                data-scroll
-                                data-module-form
-                                data-form-confirm-message="Thanks for contacting IO!"
-                                data-form-error-message="Thanks for contacting IO!"
-                        >
+                        {{ form_start(form, {'attr': {'class':'c-form'}}) }}
                             <div class="c-form_inner c-contact_form_inner">
                                 <h3 class="u-text-center c-heading -h2 c-contact_form_title -parent">Хѳтѳлбѳрт Бүртгүүлэх.</h3>
 
                                 <div class="c-form_item -required -parent">
                                     <label for="last-name" class="c-form_label">Овог</label>
-                                    <input type="text" class="c-form_input -stroke" id="last-name" name="last name" required>
+                                    {{ form_widget(form.lastname, {'attr': {'id':'last-name', 'class': 'c-form_input -stroke', 'placeholder': 'Овог', 'required': true}}) }}
+                                    {{ form_errors(form.lastname) }}
                                 </div>
                                 <div class="c-form_item -required -parent">
                                     <label for="first-name" class="c-form_label">Нэр</label>
-                                    <input type="text" class="c-form_input -stroke" id="first-name" name="first name" required>
+                                    {{ form_widget(form.firstname, { 'attr': {'id':'first-name', 'class': 'c-form_input -stroke', 'placeholder': 'Нэр', 'required': true} }) }}
+                                    {{ form_errors(form.firstname) }}
                                 </div>
                                 <div class="c-form_item -required -parent">
                                     <label for="email" class="c-form_label">Имэйл</label>
-                                    <input type="email" class="c-form_input -stroke" id="email" name="email" required>
+                                    {{ form_widget(form.email, { 'attr': {'id':'email', 'class': 'c-form_input -stroke', 'placeholder': 'Цахим шуудангийн хаяг', 'type': 'email', 'required': true} }) }}
+                                    {{ form_errors(form.email) }}
                                 </div>
                                 <div class="c-form_item -required -parent">
                                     <label for="phone" class="c-form_label">Утас</label>
-                                    <input type="tel" class="c-form_input -stroke" id="phone" name="phone" required>
+                                    {{ form_widget(form.phone, {'attr': {'id':'phone', 'class': 'c-form_input -stroke','type': 'number', 'minlength': 8, 'maxlength':8, 'placeholder': 'Утасны дугаар ', 'required': true}}) }}
+                                    {{ form_errors(form.phone) }}
                                 </div>
-
                                 <div class="c-form_item -required -parent">
                                     <label for="method" class="c-form_label">Хѳтѳлбѳр сонгох</label>
                                     <div class="c-form_select -stroke">
-                                        <select id="method" required class="c-form_select_input -stroke" name="programme">
-                                            <option value="email">CyberTech Хѳтѳлбѳр /1жил/</option>
-                                            <option value="phone">Зуны хѳтѳлбѳр /2-3 сар/</option>
-                                            <option value="phone">UI/UX хѳтѳлбѳр /2-3 сар/</option>
-                                        </select>
+                                        {{ form_widget(form.type, { 'attr': {'id':'method', 'class': 'c-form_select_input -stroke', 'rows': 4, 'required': true} }) }}
+                                        {{ form_errors(form.type) }}
                                     </div>
                                 </div>
                                 <div class="c-form_item -required -parent">
                                     <label for="message" class="c-form_label">Санал хүсэлт</label>
-                                    <textarea class="c-form_textarea -stroke" name="comments" id="message" cols="30" rows="10" required></textarea>
+                                    {{ form_widget(form.comment, { 'attr': {'id':'message', 'class': 'c-form_textarea -stroke', 'rows': 4, 'placeholder': 'Санал хүсэлт'} }) }}
+                                    {{ form_errors(form.comment) }}
                                 </div>
                             </div>
 
@@ -180,8 +172,12 @@
                                     <div class="c-form_button_loader_item"></div>
                                 </div>
                             </button>
-                            <div class="c-form_feedback" data-form="feedback"></div>
-                        </form>
+                        {% if msg is defined and status != '' %}
+                            <div class="c-form_feedback {{ status == 'success' ? 'is-success':'is-error' }}" data-form="feedback">{{ msg }}</div>
+                        {% endif %}
+
+                        {{ form_errors(form) }}
+                        {{ form_end(form) }}
                     </div>
 
                 </div>
@@ -292,42 +288,4 @@
 
 {% block javascripts %}
     {% include 'inc/flashmsg.html.twig' %}
-    <script>
-        $(document).ready( function () {
-            {% if alert is defined and alert != null %}
-            $(function(){
-                new PNotify({
-                    title: 'Алдаа гарлаа',
-                    text: '{{ alert }}'
-                });
-            });
-            {% endif %}
-        });
-
-        var loader = $('.preloader');
-
-        var $emb = $('#registration_form_embRegNum');
-        $emb.change(function() {
-            loader.show();
-
-            var $form = $(this).closest('form');
-            var data = {};
-
-            data[$emb.attr('name')] = $emb.val();
-
-            $.ajax({
-                url : $form.attr('action'),
-                type: $form.attr('method'),
-                data : data,
-                success: function(html) {
-                    $('#registration_form_emb').replaceWith(
-                        $(html).find('#registration_form_emb')
-                    );
-                },
-                complete: function() {
-                    loader.hide();
-                }
-            });
-        });
-    </script>
 {% endblock %}

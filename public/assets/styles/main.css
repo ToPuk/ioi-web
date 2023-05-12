@@ -3470,7 +3470,6 @@ html.has-dom-ready .c-button_label {
   padding: 2.5rem;
   font-size: 1.5rem;
   text-align: center;
-  display: none;
 }
 
 .c-form_feedback.-small {
@@ -3489,6 +3488,16 @@ html.has-dom-ready .c-button_label {
 }
 
 .c-form.is-success .c-form_feedback {
+  color: #002B26;
+  background: #5EFF00;
+}
+
+.c-form .is-error{
+  color: #FFFFFF;
+  background: #FE3C3C;
+}
+
+.c-form .is-success{
   color: #002B26;
   background: #5EFF00;
 }
