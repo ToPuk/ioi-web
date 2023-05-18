@@ -140,7 +140,7 @@ class RegistrationController extends AbstractController
                 'required' => true,
                 'attr' => ['class' => 'form-control'],
                 'choices' => [
-                    'Кодчиллын эрчимжүүлсэн хөтөлбөр /1 жил/' => 'Кодчиллын эрчимжүүлсэн хөтөлбөр /1 жил/',
+                    'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
                     'Зуны хөтөлбөр /2-3 сар/' => 'Зуны хөтөлбөр /2-3 сар/',
                     'UI / UX хөтөлбөр /1-2 сар/' => 'UI / UX хөтөлбөр /1-2 сар/',
                 ],
@@ -162,13 +162,13 @@ class RegistrationController extends AbstractController
             $register->setEmail($form['email']->getData());
             $register->setPhoneNumber($form['phone']->getData());
             $register->setType($form['type']->getData());
-            $register->setComment($form['comment']->getData());
+            $register->setComment($form['comment']->getData()?$form['comment']->getData():'');
             $em->persist($register);
             $em->flush();
 
             $email = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-                ->to('orgil@iotech.mn','tulga@iotech.mn')
+                ->to('orgil@iotech.mn')
                 ->subject('Бүртгэл')
                 ->html('Овог:  '.$form['lastname']->getData().'
                         <br>Нэр:  '.$form['firstname']->getData().'
@@ -192,20 +192,20 @@ class RegistrationController extends AbstractController
                 $mailer->send($email);
                 $mailer->send($emailStudent);
             } catch (TransportException $e) {
-                return $this->redirectToRoute('register_index',['status'=>'error']);
+                return $this->redirectToRoute('contact_index',['status'=>'error']);
             }
-            return $this->redirectToRoute('register_index',['status'=>'success']);
+            return $this->redirectToRoute('contact_index',['status'=>'success']);
         }
 
         if($status === 'success'){
-            $message = 'Таны бүртгэл амжилттай хийгдлээ. Үндсэн элсэлтийн үйл ажиллагаа эхлэх үед бид тантай холбогдох болно.';
+            $message = 'Таны бүртгэл амжилттай хийгдлээ. Бүртгэл баталгаажуулах үйл ажиллагаа эхлэх үед бид тантай холбогдох болно.';
         }elseif ($status === 'error'){
             $message = 'Бүртгэл хийгдэх явцад алдаа гарлаа. Та түр хүлээгээд дахин оролдоно уу.';
         }else{
             $message = '';
         }
 
-        return $this->render('registration/index.html.twig',[
+        return $this->render('pages/contact.html.twig',[
             'form' => $form->createView(),
             'msg' => $message,
             'status' => $status
