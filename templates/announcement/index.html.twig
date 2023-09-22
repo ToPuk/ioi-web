@@ -3,57 +3,243 @@
 {% block title %}Мэдээ мэдээлэл{% endblock %}
 
 {% block body %}
-    <!-- Page header -->
-    <div class="page-header">
-        <div class="page-header-content container header-elements-md-inline">
-            <div class="page-title d-flex">
-                <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Мэдээ мэдээлэл</span></h4>
-                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-            </div>
 
-            <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">
-                <div class="breadcrumb">
-                    <a href="{{ path('default_index') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Нүүр</a>
-                    <span class="breadcrumb-item active">Мэдээлэл</span>
+
+    <a href="{{ path('contact_index') }}" class="c-talk-button -fixed" data-module-talk-button>
+        Talk
+        <span class="c-talk-button_background">
+            <svg role="img"><use xlink:href="assets/images/sprite.svg#shape"></use></svg>
+        </span>
+        <span class="c-talk-button_slider swiper-container" data-talk-button="slider">
+            <span class="swiper-wrapper">
+                <div class="c-talk-button_slider_item swiper-slide">
+                    <svg role="img"><use xlink:href="assets/images/sprite.svg#talk"></use></svg>
                 </div>
+                <div class="c-talk-button_slider_item swiper-slide">
+                    <svg role="img"><use xlink:href="assets/images/sprite.svg#talk"></use></svg>
+                </div>
+            </span>
+        </span>
+    </a>
+
+<main class="o-scroll" data-module-scroll="main">
+
+    <header data-scroll-section class="c-header">
+        <div
+                class="o-layout -middle"
+                data-scroll
+                data-scroll-id="header"
+                data-scroll-offset="100%, 0"
+                data-scroll-repeat
+                data-scroll-call="toggleHeaderProgress, Scroll"
+                data-module-header-progress
+        >
+            <div class="o-layout_item u-1/2@from-small u-3/5@to-small">
+                <a href="/" class="c-header_logo" data-scroll data-scroll-speed="2"
+                   data-scroll-position="top">
+                    <svg class="u-none@from-medium" role="img"><title>Institute</title>
+                        <use href="assets/images/sprite.svg#logo-figure"></use>
+                    </svg>
+                    <span class="u-screen-reader-text">Institute</span>
+                </a>
+                <button class="c-header_button u-none@from-medium" arial-label="Menu" type="button"
+                        data-module-nav-button>
+                    <span></span>
+                </button>
+            </div>
+            <div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right">
+                <a href="{{ path('contact_index') }}" class="c-header_cta">
+                    Бүртгүүлэх
+                </a>
             </div>
         </div>
-    </div>
 
-<div class="page-content container pt-0">
-    <div class="content-wrapper">
-        {% if app.user %}
-            {% if not is_granted('ROLE_HOSPITAL') and is_granted('ROLE_USER') %}
-                <div class="mb-3">
-                    <a href="{{ path('announcement_new') }}" class="btn btn-primary">Мэдээ оруулах</a>
+    </header>
+    <section data-scroll-section>
+        <header class="c-header-career o-layout -bottom" data-scroll>
+            <div class="c-header-career_heading o-layout_item u-2/3@from-medium u-border-right@from-medium u-border-bottom@to-medium">
+                    <span class="c-bleam u-none@to-medium" data-scroll data-scroll-repeat>
+                        <span class="c-bleam_wrap -right"></span>
+                    </span>
+                <span class="c-bleam u-none@from-medium" data-scroll data-scroll-repeat>
+                        <span class="c-bleam_wrap -bottom"></span>
+                    </span>
+
+                <p class="u-padding-small-y u-padding-x u-anim -delay-2">
+                    Мэдээ мэдээлэл
+                </p>
+                <div class="u-padding-x">
+                    <h1 class="c-header-career_title c-animated-title c-heading -h1" data-module-split>
+                        Тендерийн урилга
+                    </h1>
                 </div>
-            {% endif %}
-        {% endif %}
-        {% for announcement in announcements %}
+            </div>
+            <div class="o-layout_item u-1/3@from-medium">
+                <div class="c-header-career_content u-padding">
+                    <p class="u-anim -delay-6">
+                        Малчдын аж ахуй эрхлэлт, өдөр тутамд ахуй амьдралд шаардлагатай технологийн болон бусад мэдээлэл хуваалцах, хөгжих боломжийг нэмэгдүүлэх
+                        платформын Ui/Ux дизайны ажил гүйцэтгэх нээлттэй сонгон шалгаруулалтад оролцохыг урьж байна.
+                    </p>
+                    <div class="c-header-career_cta">
 
-            <div class="card border-top-blue">
-                <div class="card-body">
-                    <div class="mb-4 border-bottom">
-                        <h4 class="font-weight-semibold mb-1">
-                            <a href="#" class="text-default">{{ announcement.title }}</a>
-                        </h4>
-
-                        <ul class="list-inline list-inline-dotted text-muted mb-3">
-                            <li class="list-inline-item">{{ announcement.releaseDate ? announcement.releaseDate|date('Y-m-d') : '' }}</li>
-                        </ul>
-
-                    </div>
-                    <div class="mb-4">
-                        {{ announcement.bodyHtml | raw }}
+                        <a href="#aboutus" class="c-header-career_cta_button c-button -color-white -hover-white" data-scroll-to>
+                                <span class="c-button_label_wrap">
+                                    <span class="c-button_label">
+                                        Дэлгэрэнгүй
+                                    </span>
+                                </span>
+                            <span class="c-button_icon_wrap">
+                                    <span class="c-button_icon">
+                                        <svg role="img"><use xlink:href="../assets/images/sprite.svg#arrow-long-right"></use></svg>
+                                    </span>
+                                </span>
+                        </a>
                     </div>
                 </div>
             </div>
-        {% else %}
-            <tr>
-                <td colspan="7">Мэдээлэл олдсонгүй</td>
-            </tr>
-        {% endfor %}
-    </div>
-</div>
+        </header>
+    </section>
 
+    <section data-scroll-section>
+        <section class="u-background-white u-border-bottom" id="aboutus">
+            <h2 class="c-content-statistic_header u-padding c-heading -h2">
+                Гүйцэхгэх ажил
+            </h2>
+            <div class="o-layout">
+                <div class="o-layout_item u-padding" data-scroll>
+                    <div class="c-content-statistic_heading">
+                        <div class="o-layout -gutter-small -top">
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                1. Вебсайтын дизайн боловсруулах
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                2. Хэрэглэгчийн санал хүсэлтийг цуглуулан шинжилгээ хийж, хэрэглэгчийн хэрэгцээ болон “pain point”-ийг судлах
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                3. Дизайн спринт зохион байгуулах
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                4. Бизнесийн шаардлагад тулгуурлан вебсайтын интерфейс, хэрэглээний урсгалын загвар гаргах
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                5. Бүтээгдэхүүнийг турших Prototype, хэрэглэгчдэд хэрхэн харагдахыг дүрслэх wireframe боловсруулах
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                6. Шинээр гарч буй дижитал технологи, дизайн, тренд, шийдэл, хэрэглэгчийн судалгаа хийж судалгаанд үндэслэн шинэчлэлтүүдийг хийх
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="u-background-white u-border-bottom" id="aboutus">
+            <h2 class="c-content-statistic_header u-padding c-heading -h2">
+                Тендерт оролцогч
+            </h2>
+            <div class="o-layout">
+                <div class="o-layout_item u-padding" data-scroll>
+                    <div class="c-content-statistic_heading">
+                        <div class="o-layout -gutter-small -top">
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                1. Компанийн танилцуулга /үндсэн хөрөнгө, тоног төхөөрөмж, хүн хүчний талаарх мэдээлэл хавсаргасан байх/
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                2. Компанийн улсын бүртгэлийн гэрчилгээ, Тусгай зөвшөөрөл, тусгай зөвшөөрлийн гэрээ
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                3. Санхүүгийн тайлан /сүүлийн 2 жилээр/
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                4. Гүйцэтгэсэн ажлын жагсаалт /мөнгөн дүн, ажлын нэрийн хамт, гүйцэтгэсэн ажлын туршлагын талаарх мэдээлэл/
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                5. Ажил гүйцэтгэх график
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                6. Үнийн санал - /батлагдсан маягтын дагуу бөглөх, өөрийн тамга дарж баталгаажуулах, хэрэв өөрчилсөн тохиолдолд хасагдах болохыг анхаарна уу/  /зэргийг битүүмжлэгдсэн дугтуйтай ирүүлнэ./
+                            </div>
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                7. Дизайны ажлыг хэрэглэгчийн шаардлагад нийцүүлж гүйцэтгэх
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="u-background-white u-border-bottom" id="aboutus">
+            <h2 class="c-content-statistic_header u-padding c-heading -h2">
+                Материал хүлээн авах хаяг
+            </h2>
+            <div class="o-layout">
+                <div class="o-layout_item u-padding" data-scroll>
+                    <div class="c-content-statistic_heading">
+                        <div class="o-layout -gutter-small -top">
+                            <div class="o-layout_item u-3/3@from-medium u-anim-scroll -parent">
+                                <b>Дээрх материал дутуу бүрдүүлж өгсөн тохиолдолд хасагдах болохыг анхаарна уу.</b>
+                                <br>ТЕНДЕРТ ОРОЛЦОГЧИЙН ҮНИЙН САНАЛ БОЛОН ХОЛБОГДОХ МАТЕРИАЛУУДЫГ БАЯНЗҮРХ ДҮҮРГИЙН 1-Р ХОРОО, ЭНХТАЙВАНЫ ӨРГӨН ЧӨЛӨӨ-5, 13381, СЭЗИС B БАЙР 402 ТООТОД ХҮЛЭЭЛГЭН ӨГНӨ ҮҮ.
+                                <br>ТЕНДЕРИЙН ТАЛААР НЭМЭЛТ ДЭЛГЭРЭНГҮЙ МЭДЭЭЛЛИЙГ ADMIN@IOI.MN МЭЙЛ ХАЯГААР ХОЛБОГДОЖ АВНА УУ.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+{#    <!-- Page header -->#}
+{#    <div class="page-header">#}
+{#        <div class="page-header-content container header-elements-md-inline">#}
+{#            <div class="page-title d-flex">#}
+{#                <h4><i class="icon-newspaper mr-2"></i> <span class="font-weight-semibold">Мэдээ мэдээлэл</span></h4>#}
+{#                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>#}
+{#            </div>#}
+
+{#            <div class="header-elements d-none bg-transparent border-0 py-0 mb-3 mb-md-0">#}
+{#                <div class="breadcrumb">#}
+{#                    <a href="{{ path('default_index') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Нүүр</a>#}
+{#                    <span class="breadcrumb-item active">Мэдээлэл</span>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+{#<div class="page-content container pt-0">#}
+{#    <div class="content-wrapper">#}
+{#        {% if app.user %}#}
+{#            {% if not is_granted('ROLE_HOSPITAL') and is_granted('ROLE_USER') %}#}
+{#                <div class="mb-3">#}
+{#                    <a href="{{ path('announcement_new') }}" class="btn btn-primary">Мэдээ оруулах</a>#}
+{#                </div>#}
+{#            {% endif %}#}
+{#        {% endif %}#}
+{#        {% for announcement in announcements %}#}
+
+{#            <div class="card border-top-blue">#}
+{#                <div class="card-body">#}
+{#                    <div class="mb-4 border-bottom">#}
+{#                        <h4 class="font-weight-semibold mb-1">#}
+{#                            <a href="#" class="text-default">{{ announcement.title }}</a>#}
+{#                        </h4>#}
+
+{#                        <ul class="list-inline list-inline-dotted text-muted mb-3">#}
+{#                            <li class="list-inline-item">{{ announcement.releaseDate ? announcement.releaseDate|date('Y-m-d') : '' }}</li>#}
+{#                        </ul>#}
+
+{#                    </div>#}
+{#                    <div class="mb-4">#}
+{#                        {{ announcement.bodyHtml | raw }}#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="7">Мэдээлэл олдсонгүй</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#</div>#}
+
+{% endblock %}
+
+{% block javascripts %}
+    {% include 'inc/flashmsg.html.twig' %}
 {% endblock %}
