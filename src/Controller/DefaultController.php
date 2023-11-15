@@ -69,10 +69,10 @@ class DefaultController extends AbstractController
                 'required' => true,
                 'attr' => ['class' => 'form-control'],
                 'choices' => [
-//                    'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
+                    'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
 //                    'Зуны хөтөлбөр /2-3 сар/' => 'Зуны хөтөлбөр /2-3 сар/',
 //                    'UI / UX хөтөлбөр /1-2 сар/' => 'UI / UX хөтөлбөр /1-2 сар/',
-                    'Unity 3D Mobile Game Development Course' => 'Unity 3D Mobile Game Development Course /3 сар/',
+//                    'Unity 3D Mobile Game Development Course' => 'Unity 3D Mobile Game Development Course /3 сар/',
                 ],
             ))
             ->add('comment', TextareaType::class, [
