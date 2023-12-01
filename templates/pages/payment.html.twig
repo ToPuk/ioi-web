@@ -1,0 +1,248 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Холбоо барих
+{% endblock %}
+
+
+{% block body %}
+
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-success" role="alert">{{ flashError }}</div>
+	{% endfor %}
+
+
+	<a href="{{ path('contact_index') }}" class="c-talk-button -fixed" data-module-talk-button>
+		Talk
+		<span class="c-talk-button_background">
+			<svg role="img">
+				<use xlink:href="../assets/images/sprite.svg#shape"></use>
+			</svg>
+		</span>
+		<span class="c-talk-button_slider swiper-container" data-talk-button="slider">
+			<span class="swiper-wrapper">
+				<div class="c-talk-button_slider_item swiper-slide">
+					<svg role="img">
+						<use xlink:href="../assets/images/sprite.svg#talk"></use>
+					</svg>
+				</div>
+				<div class="c-talk-button_slider_item swiper-slide">
+					<svg role="img">
+						<use xlink:href="../assets/images/sprite.svg#talk"></use>
+					</svg>
+				</div>
+			</span>
+		</span>
+	</a>
+	<p class="o-scroll_indicator u-text-label">Доошоо</p>
+	<main class="o-scroll" data-module-scroll="main">
+
+		<header data-scroll-section class="c-header">
+			<div class="o-layout -middle" data-scroll data-scroll-id="header" data-scroll-offset="100%, 0" data-scroll-repeat data-scroll-call="toggleHeaderProgress, Scroll" data-module-header-progress>
+				<div class="o-layout_item u-1/2@from-small u-3/5@to-small">
+					<a href="/" class="c-header_logo" data-scroll data-scroll-speed="2" data-scroll-position="top">
+						<svg class="u-none@from-medium" role="img">
+							<title>Institute</title>
+							<use href="../assets/images/sprite.svg#logo-figure"></use>
+						</svg>
+					</a>
+					<button class="c-header_button u-none@from-medium" arial-label="Menu" type="button" data-module-nav-button>
+						<span></span>
+					</button>
+				</div>
+				<div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right"></div>
+			</div>
+
+		</header>
+		<section data-scroll-section>
+			<div class="c-contact" id="contact">
+				<div class="o-layout">
+					<div class="o-layout_item u-1/2@from-medium">
+						<header class="c-contact_header u-relative">
+							<h1 class="c-contact_header_title c-heading -h1 -huge">
+								<span class="c-contact_header_title_line" data-scroll data-scroll-speed="-4" data-scroll-delay="0.1" data-scroll-direction="horizontal" data-scroll-target="#contact" data-scroll-position="top">
+									<span class="c-contact_header_title_line_inner">
+										Холбоо
+									</span>
+								</span>
+								<span class="c-contact_header_title_line" data-scroll data-scroll-speed="-5" data-scroll-delay="0.2" data-scroll-direction="horizontal" data-scroll-target="#contact" data-scroll-position="top">
+									<span class="c-contact_header_title_line_inner">
+										Барих
+									</span>
+								</span>
+							</h1>
+
+						</header>
+						<div class="u-padding c-contact_info">
+							<div class="o-layout">
+								<div class="o-layout_item u-1/2@from-tiny u-anim -delay-7">
+									<a href="tel:97677321010" target="_blank" rel="noopener" class="c-contact_link -hover">
+										<strong>+976 7732 1010</strong>
+									</a>
+								</div>
+								<div class="o-layout_item u-1/2@from-tiny u-anim -delay-8">
+									<a href="mailto:admin@ioi.mn" target="_blank" rel="noopener" class="c-contact_link -hover">admin@ioi.mn</a>
+								</div>
+							</div>
+						</div>
+						<div class="u-padding c-contact_info -delay">
+							<span class="c-bleam" data-scroll="" data-scroll-repeat="">
+								<span class="c-bleam_wrap -top"></span>
+							</span>
+							<div class="o-layout">
+								<div class="o-layout_item u-1/2@from-tiny u-anim -delay-9">
+									<a href="https://goo.gl/maps/p4nbJ1isAsBX6j8J6">
+										<strong class="c-contact_link_title">СЭЗИС-н байр, B-4 давхар</strong>
+										<br>
+										Монгол улс, Улаанбаатар хот, Баянзүрх дүүрэг<br/>
+										1-р хороо, Энхтайваны өргөн чөлөө-5, 13381
+										<br>
+										<span class="c-contact_link_icon">
+											<svg role="img" class="c-contact_link_arrow -normal">
+												<use xlink:href="../assets/images/sprite.svg#arrow-long-right"></use>
+											</svg>
+											<svg role="img" class="c-contact_link_arrow -hover">
+												<use xlink:href="../assets/images/sprite.svg#arrow-long-right"></use>
+											</svg>
+										</span>
+									</a>
+								</div>
+								<div class="o-layout_item u-1/2@from-tiny u-anim -delay-9">
+									<a href="https://goo.gl/maps/RFNiNckUsgjqRZg48" target="_blank" rel="noopener" class="c-contact_link -margin-bottom@to-tiny">
+										<strong class="c-contact_link_title">MN Tower, 11 давхар</strong>
+										<br>
+										Монгол улс, Улаанбаатар хот, Чингэлтэй дүүрэг<br/>
+										5-р хороо, Самбуугийн гудамж, 15141
+										<br>
+										<br>
+										<span class="c-contact_link_icon">
+											<svg role="img" class="c-contact_link_arrow -normal">
+												<use xlink:href="../assets/images/sprite.svg#arrow-long-right"></use>
+											</svg>
+											<svg role="img" class="c-contact_link_arrow -hover">
+												<use xlink:href="../assets/images/sprite.svg#arrow-long-right"></use>
+											</svg>
+										</span>
+									</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="o-layout_item u-1/2@from-medium c-contact_form">
+						<span class="c-bleam u-none@to-medium" data-scroll data-scroll-repeat>
+							<span class="c-bleam_wrap -left"></span>
+						</span>
+						<div class="u-padding-big">
+							{% if msg is defined and status != '' %}
+
+								<div class="bg-success u-text-blue {{ invoiceId  ? 'is-check':'is-failed' }}" style="margin-bottom:2rem;  background-color:#ffcc00" data-form="feedback">
+
+
+									{{msg }}
+									{% if qrCode is defined %}
+										<img src="data:image/png;base64,{{ qrCode }}" alt="qr not found" class="img-fluid" style="margin:1rem;">
+									{% else %}
+										<div style='margin-top:1rem'></div>
+									{% endif %}
+
+									<a class="c-button -back   u-text-white -blue -hover-white" href="{{ url('check_index') }}?invoiceId={{ invoiceId }}">
+
+										Төлбөр шалгах
+									</a>
+									<a class="c-form_feedback	 -small" href="{{ url('contact_index') }}">
+
+
+										Дахин үүсгэх
+									</a>
+
+
+								</div>
+							{% endif %}
+							{% if msg == '' %}
+
+
+								{{ form_start(form, {'attr': {'class':'c-form'}}) }}
+
+
+								<div class="c-form_inner c-contact_form_inner">
+									<h3 class="u-text-center c-heading -h2 c-contact_form_title -parent">Хѳтѳлбѳрт Бүртгүүлэх.</h3>
+
+									<div class="c-form_item -required -parent">
+										<label for="last-name" class="c-form_label">Овог</label>
+										{{ form_widget(form.lastname, {'attr': {'id':'last-name', 'class': 'c-form_input -stroke', 'placeholder': 'Овог', 'required': true}}) }}
+										{{ form_errors(form.lastname) }}
+									</div>
+									<div class="c-form_item -required -parent">
+										<label for="first-name" class="c-form_label">Нэр</label>
+										{{ form_widget(form.firstname, { 'attr': {'id':'first-name', 'class': 'c-form_input -stroke', 'placeholder': 'Нэр', 'required': true} }) }}
+										{{ form_errors(form.firstname) }}
+									</div>
+									<div class="c-form_item -required -parent">
+										<label for="email" class="c-form_label">Имэйл</label>
+										{{ form_widget(form.email, { 'attr': {'id':'email', 'class': 'c-form_input -stroke', 'placeholder': 'Цахим шуудангийн хаяг', 'type': 'email', 'required': true} }) }}
+										{{ form_errors(form.email) }}
+									</div>
+									<div class="c-form_item -required -parent">
+										<label for="phone" class="c-form_label">Утас</label>
+										{{ form_widget(form.phone, {'attr': {'id':'phone', 'class': 'c-form_input -stroke','type': 'number', 'minlength': 8, 'maxlength':8, 'placeholder': 'Утасны дугаар ', 'required': true}}) }}
+										{{ form_errors(form.phone) }}
+									</div>
+									<div class="c-form_item -required -parent">
+										<label for="method" class="c-form_label">Хѳтѳлбѳр сонгох</label>
+										<div class="c-form_select -stroke">
+											{{ form_widget(form.type, { 'attr': {'id':'method', 'class': 'c-form_select_input -stroke', 'rows': 4, 'required': true} }) }}
+											{{ form_errors(form.type) }}
+										</div>
+									</div>
+									<div class="c-form_item -required -parent">
+										<label for="amount" class="c-form_label">Төлбөр төлөх боломжит дүн</label>
+
+
+										{{ form_widget(form.amount, {'attr': {'id':'amount', 'class': 'c-form_input -stroke','type': 'number', 'placeholder': 'Дүнгээ оруулна уу!', 'required': true}}) }}
+										{{ form_errors(form.amount) }}
+
+									</div>
+
+									<div class="c-form_item -required -parent">
+										<label for="message" class="c-form_label">Санал хүсэлт</label>
+										{{ form_widget(form.comment, { 'attr': {'id':'message', 'class': 'c-form_textarea -stroke', 'rows': 4, 'placeholder': 'Санал хүсэлт'} }) }}
+										{{ form_errors(form.comment) }}
+									</div>
+								</div>
+
+								<input type="hidden" name="language" value="en">
+								<input type="hidden" class="js-recaptcha-response" name="g-recaptcha-response" value="">
+
+
+								<button type="submit" class="c-button -huge -white c-form_button">
+									<span class="c-button_label c-form_button_label">
+										БҮРТГҮҮЛЭХ
+									</span>
+									<div class="c-form_button_loader">
+										<div class="c-form_button_loader_item"></div>
+										<div class="c-form_button_loader_item"></div>
+										<div class="c-form_button_loader_item"></div>
+										<div class="c-form_button_loader_item"></div>
+									</div>
+								</button>
+
+
+								{{ form_errors(form) }}
+								{{ form_end(form) }}
+							{% endif %}
+
+
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	{% endblock %}
+
+	{% block javascripts %}
+		{% include 'inc/flashmsg.html.twig' %}
+	{% endblock %}

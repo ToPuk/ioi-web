@@ -10,6 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class RegUsers
 {
+    public const STATE_REGISTERED = "R";
+    public const STATE_CONFIRM = "C";
+    public const STATE_PENDING = "P";
+    public const STATE_DELETED = 'D';
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -51,12 +55,20 @@ class RegUsers
      * @ORM\Column(type="datetime")
      */
     private $createdDate;
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private ?Payment $paymentRegisterFee;
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private ?Payment $paymentCredit;
 
     public function __construct()
     {
         $this->createdDate = new \DateTime('now');
     }
-    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -143,6 +155,27 @@ class RegUsers
     {
         $this->createdDate = $createdDate;
 
+        return $this;
+    }
+    public function getPaymentRegisterFee(): ?Payment
+    {
+        return $this->paymentRegisterFee;
+    }
+
+    public function setPaymentRegisterFee(?Payment $paymentRegisterFee): self
+    {
+        $this->paymentRegisterFee = $paymentRegisterFee;
+        return $this;
+    }
+
+    public function getPaymentCredit(): ?Payment
+    {
+        return $this->paymentCredit;
+    }
+
+    public function setPaymentCredit(?Payment $paymentCredit): self
+    {
+        $this->paymentCredit = $paymentCredit;
         return $this;
     }
 }
