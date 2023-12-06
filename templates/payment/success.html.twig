@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Нүүр хуудас
+{% endblock %}
+
+{% block body %}
+
+
+	<a href="{{ path('contact_index') }}" class="c-talk-button -fixed" data-module-talk-button>
+		Talk
+		<span class="c-talk-button_background">
+			<svg role="img">
+				<use xlink:href="assets/images/sprite.svg#shape"></use>
+			</svg>
+		</span>
+		<span class="c-talk-button_slider swiper-container" data-talk-button="slider">
+			<span class="swiper-wrapper">
+				<div class="c-talk-button_slider_item swiper-slide">
+					<svg role="img">
+						<use xlink:href="assets/images/sprite.svg#talk"></use>
+					</svg>
+				</div>
+				<div class="c-talk-button_slider_item swiper-slide">
+					<svg role="img">
+						<use xlink:href="assets/images/sprite.svg#talk"></use>
+					</svg>
+				</div>
+			</span>
+		</span>
+	</a>
+	<main class="o-scroll" data-module-scroll="main">
+
+		<header data-scroll-section class="c-header">
+			<div class="o-layout -middle" data-scroll data-scroll-id="header" data-scroll-offset="100%, 0" data-scroll-repeat data-scroll-call="toggleHeaderProgress, Scroll" data-module-header-progress>
+				<div class="o-layout_item u-1/2@from-small u-3/5@to-small">
+					<a href="/" class="c-header_logo" data-scroll data-scroll-speed="2" data-scroll-position="top">
+						<svg class="u-none@from-medium" role="img">
+							<title>Institute</title>
+							<use href="assets/images/sprite.svg#logo-figure"></use>
+						</svg>
+						<span class="u-screen-reader-text">Institute</span>
+					</a>
+					<button class="c-header_button u-none@from-medium" arial-label="Menu" type="button" data-module-nav-button>
+						<span></span>
+					</button>
+				</div>
+				<div class="o-layout_item u-1/2@from-small u-2/5@to-small u-text-right">
+
+
+					<a href="{{ path('contact_index') }}" class="c-header_cta">
+						Бүртгүүлэх
+					</a>
+				</div>
+			</div>
+
+		</header>
+		<section data-scroll-section>
+
+
+			<section class="c-home-content" id="home-content">
+
+				<div class="o-layout -reverse -bottom" style='padding-top:5rem'>
+					<div class="c-home-content_layout_item  o-layout_item  u-padding" data-scroll>
+
+						<h2 class="u-padding is-success c-heading -h2 -indent c-home-content_title u-anim-scroll u-text-center" data-scroll>Таны бүртгэл амжилттай баталгаажлаа! Танд амжилт хүсье!</h2>
+
+
+					</div>
+
+				</div>
+
+			</section>
+
+		</section>
+
+
+	{% endblock %}
+
+	{% block javascripts %}
+		{% include 'inc/flashmsg.html.twig' %}
+	{% endblock %}
