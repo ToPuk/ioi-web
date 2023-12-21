@@ -50,9 +50,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact_index")
+     * @Route("/payment", name="payment_index")
      */
-    public function contact(Request $request, Qpay $qPay, MailerInterface $mailer)
+    public function payment(Request $request, Qpay $qPay, MailerInterface $mailer)
     {
         $status = $request->get('status');
         $qrCode = $request->get('qrCode');
@@ -167,9 +167,9 @@ class DefaultController extends AbstractController
                 $mailer->send($emailStudent);
                 $this->addFlash('success', 'Амжилттай');
             } catch (TransportException $e) {
-                return $this->redirectToRoute('contact_index', ['status' => 'error']);
+                return $this->redirectToRoute('payment_index', ['status' => 'error']);
             }
-            return $this->redirectToRoute('contact_index', ['status' => 'success', 'qrCode' => $qrCode, 'invoiceId' => $invoiceId]);
+            return $this->redirectToRoute('payment_index', ['status' => 'success', 'qrCode' => $qrCode, 'invoiceId' => $invoiceId]);
         }
         if ($status === 'success') {
             $message = 'Таны бүртгэл амжилттай хийгдлээ. Баталгаажуулах бол доорх QR уншуулж төлбөрөө төлнө үү?';
@@ -312,111 +312,112 @@ class DefaultController extends AbstractController
     {
         return $this->render('pages/about.html.twig');
     }
+
+    /**
+     * @Route("/contact", name="contact_index")
+     */
+    public function contact(Request $request, MailerInterface $mailer)
+    {
+        $status = $request->get('status');
+
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createFormBuilder()
+            ->setMethod('GET')
+            ->add('lastname', TextType::class, [
+                'label' => 'Овог',
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
+            ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Нэр',
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
+            ])
+            ->add('phone', NumberType::class, [
+                'label' => 'Утасны дугаар',
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
+                'invalid_message' => 'Утасны дугаар алдаатай байна!'
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Цахим шуудан',
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
+            ])
+            ->add('type', ChoiceType::class, array(
+                'required' => true,
+                'attr' => ['class' => 'form-control'],
+                'choices' => [
+                    'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
+                    //                    'Зуны хөтөлбөр /2-3 сар/' => 'Зуны хөтөлбөр /2-3 сар/',
+                    //                    'UI / UX хөтөлбөр /1-2 сар/' => 'UI / UX хөтөлбөр /1-2 сар/',
+                    //                    'Unity 3D Mobile Game Development Course' => 'Unity 3D Mobile Game Development Course /3 сар/',
+                ],
+            ))
+            ->add('comment', TextareaType::class, [
+                'label' => 'Санал хүсэлт',
+                'attr' => ['class' => 'form-control'],
+                'required' => false,
+            ])
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $register = new RegUsers();
+            $register->setFirstName($form['firstname']->getData());
+            $register->setLastName($form['lastname']->getData());
+            $register->setEmail($form['email']->getData());
+            $register->setPhoneNumber($form['phone']->getData());
+            $register->setType($form['type']->getData());
+            $register->setComment($form['comment']->getData() ? $form['comment']->getData() : '');
+            $em->persist($register);
+            $em->flush();
+
+            $email = (new TemplatedEmail())
+                ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
+                ->to('gvvsbamps@gmail.com')
+                ->subject('Бүртгэл')
+                ->html('Овог:  ' . $form['lastname']->getData() . '
+                        <br>Нэр:  ' . $form['firstname']->getData() . '
+                        <br>Утасны дугаар:  ' . $form['phone']->getData() . '
+                        <br>Имэйл:  ' . $form['email']->getData() . '
+                        <br>Төрөл:  ' . $form['type']->getData() . '
+                        <br>Санал хүсэлт:  ' . $form['comment']->getData());
+
+            $emailStudent = (new TemplatedEmail())
+                ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
+                ->to('gvvsbamps@gmail.com')
+                ->subject('Амжилттай бүртгэгдлээ')
+                ->htmlTemplate('emails/general_request.html.twig')
+                ->context([
+                    'username' => $form['firstname']->getData(),
+                ]);
+
+            try {
+                $mailer->send($email);
+                $mailer->send($emailStudent);
+                $this->addFlash('success', 'Амжилттай');
+            } catch (TransportException $e) {
+                return $this->redirectToRoute('contact_index', ['status' => 'error']);
+            }
+            return $this->redirectToRoute('contact_index', ['status' => 'success']);
+        }
+
+        if ($status === 'success') {
+            $message = 'Таны бүртгэл амжилттай хийгдлээ. Бүртгэл баталгаажуулах үйл ажиллагаа эхлэх үед бид тантай холбогдох болно.';
+        } elseif ($status === 'error') {
+            $message = 'Бүртгэл хийгдэх явцад алдаа гарлаа. Та түр хүлээгээд дахин оролдоно уу.';
+        } else {
+            $message = '';
+        }
+
+        return $this->render('pages/contact.html.twig', [
+            'form' => $form->createView(),
+            'msg' => $message,
+            'status' => $status
+        ]);
+    }
 }
-// /**
-    //  * @Route("/contact", name="contact_index")
-    //  */
-    // public function contact(Request $request, MailerInterface $mailer)
-    // {
-    //     $status = $request->get('status');
-
-    //     /** @var EntityManager $em */
-    //     $em = $this->getDoctrine()->getManager();
-
-    //     $form = $this->createFormBuilder()
-    //         ->setMethod('GET')
-    //         ->add('lastname', TextType::class, [
-    //             'label' => 'Овог',
-    //             'attr' => ['class' => 'form-control'],
-    //             'required' => true,
-    //         ])
-    //         ->add('firstname', TextType::class, [
-    //             'label' => 'Нэр',
-    //             'attr' => ['class' => 'form-control'],
-    //             'required' => true,
-    //         ])
-    //         ->add('phone', NumberType::class, [
-    //             'label' => 'Утасны дугаар',
-    //             'attr' => ['class' => 'form-control'],
-    //             'required' => true,
-    //             'invalid_message' => 'Утасны дугаар алдаатай байна!'
-    //         ])
-    //         ->add('email', EmailType::class, [
-    //             'label' => 'Цахим шуудан',
-    //             'attr' => ['class' => 'form-control'],
-    //             'required' => true,
-    //         ])
-    //         ->add('type', ChoiceType::class, array(
-    //             'required' => true,
-    //             'attr' => ['class' => 'form-control'],
-    //             'choices' => [
-    //                 'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
-    //                 //                    'Зуны хөтөлбөр /2-3 сар/' => 'Зуны хөтөлбөр /2-3 сар/',
-    //                 //                    'UI / UX хөтөлбөр /1-2 сар/' => 'UI / UX хөтөлбөр /1-2 сар/',
-    //                 //                    'Unity 3D Mobile Game Development Course' => 'Unity 3D Mobile Game Development Course /3 сар/',
-    //             ],
-    //         ))
-    //         ->add('comment', TextareaType::class, [
-    //             'label' => 'Санал хүсэлт',
-    //             'attr' => ['class' => 'form-control'],
-    //             'required' => false,
-    //         ])
-    //         ->getForm();
-
-    //     $form->handleRequest($request);
-    //     if ($form->isSubmitted() && $form->isValid()) {
-
-    //         $register = new RegUsers();
-    //         $register->setFirstName($form['firstname']->getData());
-    //         $register->setLastName($form['lastname']->getData());
-    //         $register->setEmail($form['email']->getData());
-    //         $register->setPhoneNumber($form['phone']->getData());
-    //         $register->setType($form['type']->getData());
-    //         $register->setComment($form['comment']->getData() ? $form['comment']->getData() : '');
-    //         $em->persist($register);
-    //         $em->flush();
-
-    //         $email = (new TemplatedEmail())
-    //             ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-    //             ->to('gvvsbamps@gmail.com')
-    //             ->subject('Бүртгэл')
-    //             ->html('Овог:  ' . $form['lastname']->getData() . '
-    //                     <br>Нэр:  ' . $form['firstname']->getData() . '
-    //                     <br>Утасны дугаар:  ' . $form['phone']->getData() . '
-    //                     <br>Имэйл:  ' . $form['email']->getData() . '
-    //                     <br>Төрөл:  ' . $form['type']->getData() . '
-    //                     <br>Санал хүсэлт:  ' . $form['comment']->getData());
-
-    //         $emailStudent = (new TemplatedEmail())
-    //             ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-    //             ->to('gvvsbamps@gmail.com')
-    //             ->subject('Амжилттай бүртгэгдлээ')
-    //             ->htmlTemplate('emails/general_request.html.twig')
-    //             ->context([
-    //                 'username' => $form['firstname']->getData(),
-    //             ]);
-
-    //         try {
-    //             $mailer->send($email);
-    //             $mailer->send($emailStudent);
-    //             $this->addFlash('success', 'Амжилттай');
-    //         } catch (TransportException $e) {
-    //             return $this->redirectToRoute('contact_index', ['status' => 'error']);
-    //         }
-    //         return $this->redirectToRoute('contact_index', ['status' => 'success']);
-    //     }
-
-    //     if ($status === 'success') {
-    //         $message = 'Таны бүртгэл амжилттай хийгдлээ. Бүртгэл баталгаажуулах үйл ажиллагаа эхлэх үед бид тантай холбогдох болно.';
-    //     } elseif ($status === 'error') {
-    //         $message = 'Бүртгэл хийгдэх явцад алдаа гарлаа. Та түр хүлээгээд дахин оролдоно уу.';
-    //     } else {
-    //         $message = '';
-    //     }
-
-    //     return $this->render('pages/contact.html.twig', [
-    //         'form' => $form->createView(),
-    //         'msg' => $message,
-    //         'status' => $status
-    //     ]);
-    // }
