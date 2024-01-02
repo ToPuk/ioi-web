@@ -380,7 +380,7 @@ class DefaultController extends AbstractController
 
             $email = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-                ->to('gvvsbamps@gmail.com')
+                ->to('orgil.b@ufe.edu.mn')
                 ->subject('Бүртгэл')
                 ->html('Овог:  ' . $form['lastname']->getData() . '
                         <br>Нэр:  ' . $form['firstname']->getData() . '
@@ -391,7 +391,7 @@ class DefaultController extends AbstractController
 
             $emailStudent = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-                ->to('gvvsbamps@gmail.com')
+                ->to($form['email']->getData())
                 ->subject('Амжилттай бүртгэгдлээ')
                 ->htmlTemplate('emails/general_request.html.twig')
                 ->context([
