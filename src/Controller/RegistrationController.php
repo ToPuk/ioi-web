@@ -85,10 +85,10 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/send-register", name="send_register")
      */
-    public function action(Request $request,MailerInterface $mailer): Response
+    public function action(Request $request, MailerInterface $mailer): Response
     {
-//        dump('hi');
-//        exit();
+        //        dump('hi');
+        //        exit();
         $email = (new TemplatedEmail())
             ->from(new Address('admin@ioi.mn', 'test'))
             ->to('orgil@iotech.mn')
@@ -100,7 +100,7 @@ class RegistrationController extends AbstractController
             ]);
         $mailer->send($email);
 
-        return $this->redirectToRoute('app_register',['msg'=>'success']);
+        return $this->redirectToRoute('app_register', ['msg' => 'success']);
     }
 
     /**
@@ -140,10 +140,11 @@ class RegistrationController extends AbstractController
                 'required' => true,
                 'attr' => ['class' => 'form-control'],
                 'choices' => [
-                    'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
-//                    'Зуны хөтөлбөр /2-3 сар/' => 'Зуны хөтөлбөр /2-3 сар/',
-//                    'UI / UX хөтөлбөр /1-2 сар/' => 'UI / UX хөтөлбөр /1-2 сар/',
-//                    'Unity 3D Mobile Game Development Course' => 'Unity 3D Mobile Game Development Course /3 сар/',
+                    '1 жилийн эрчимжүүлсэн хөтөлбөр /Өвөл/' => '1 жилийн эрчимжүүлсэн хөтөлбөр /Өвөл/',
+                    // 'CyberTech Хѳтѳлбѳр /1жил/' => 'CyberTech Хѳтѳлбѳр /1жил/',
+                    //                    'Зуны хөтөлбөр /2-3 сар/' => 'Зуны хөтөлбөр /2-3 сар/',
+                    //                    'UI / UX хөтөлбөр /1-2 сар/' => 'UI / UX хөтөлбөр /1-2 сар/',
+                    //                    'Unity 3D Mobile Game Development Course' => 'Unity 3D Mobile Game Development Course /3 сар/',
                 ],
             ))
             ->add('comment', TextareaType::class, [
@@ -151,8 +152,7 @@ class RegistrationController extends AbstractController
                 'attr' => ['class' => 'form-control'],
                 'required' => false,
             ])
-            ->getForm()
-        ;
+            ->getForm();
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -163,7 +163,7 @@ class RegistrationController extends AbstractController
             $register->setEmail($form['email']->getData());
             $register->setPhoneNumber($form['phone']->getData());
             $register->setType($form['type']->getData());
-            $register->setComment($form['comment']->getData()?$form['comment']->getData():'');
+            $register->setComment($form['comment']->getData() ? $form['comment']->getData() : '');
             $em->persist($register);
             $em->flush();
 
@@ -171,13 +171,12 @@ class RegistrationController extends AbstractController
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
                 ->to('orgil@iotech.mn')
                 ->subject('Бүртгэл')
-                ->html('Овог:  '.$form['lastname']->getData().'
-                        <br>Нэр:  '.$form['firstname']->getData().'
-                        <br>Утасны дугаар:  '.$form['phone']->getData().'
-                        <br>Имэйл:  '.$form['email']->getData().'
-                        <br>Төрөл:  '.$form['type']->getData().'
-                        <br>Санал хүсэлт:  '.$form['comment']->getData())
-            ;
+                ->html('Овог:  ' . $form['lastname']->getData() . '
+                        <br>Нэр:  ' . $form['firstname']->getData() . '
+                        <br>Утасны дугаар:  ' . $form['phone']->getData() . '
+                        <br>Имэйл:  ' . $form['email']->getData() . '
+                        <br>Төрөл:  ' . $form['type']->getData() . '
+                        <br>Санал хүсэлт:  ' . $form['comment']->getData());
 
             $emailStudent = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
@@ -186,27 +185,26 @@ class RegistrationController extends AbstractController
                 ->htmlTemplate('emails/general_request.html.twig')
                 ->context([
                     'username' => $form['firstname']->getData(),
-                ])
-            ;
+                ]);
 
             try {
                 $mailer->send($email);
                 $mailer->send($emailStudent);
             } catch (TransportException $e) {
-                return $this->redirectToRoute('contact_index',['status'=>'error']);
+                return $this->redirectToRoute('contact_index', ['status' => 'error']);
             }
-            return $this->redirectToRoute('contact_index',['status'=>'success']);
+            return $this->redirectToRoute('contact_index', ['status' => 'success']);
         }
 
-        if($status === 'success'){
+        if ($status === 'success') {
             $message = 'Таны бүртгэл амжилттай хийгдлээ. Бүртгэл баталгаажуулах үйл ажиллагаа эхлэх үед бид тантай холбогдох болно.';
-        }elseif ($status === 'error'){
+        } elseif ($status === 'error') {
             $message = 'Бүртгэл хийгдэх явцад алдаа гарлаа. Та түр хүлээгээд дахин оролдоно уу.';
-        }else{
+        } else {
             $message = '';
         }
 
-        return $this->render('pages/contact.html.twig',[
+        return $this->render('pages/contact.html.twig', [
             'form' => $form->createView(),
             'msg' => $message,
             'status' => $status
@@ -232,7 +230,7 @@ class RegistrationController extends AbstractController
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
 
-            $logger->info('verify-email-'.$user->getEmail(), ['user'=>$user]);
+            $logger->info('verify-email-' . $user->getEmail(), ['user' => $user]);
             $this->emailVerifier->handleEmailConfirmation($request, $user);
         } catch (VerifyEmailExceptionInterface $exception) {
             $this->addFlash('verify_email_error', $exception->getReason());
@@ -249,7 +247,8 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/check_email", name="registration_check_email")
      */
-    public function checkEmail(){
+    public function checkEmail()
+    {
         return $this->render('registration/check_email.html.twig');
     }
 }
