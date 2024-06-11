@@ -95,10 +95,10 @@ class AnnouncementController extends AbstractController
                     'Content-Type' => 'application/json',
                     'x-api-key' => 'nh7kMUYU.AR3cnUGJFeDjWNMpIo4bxEP1s8IUjgx0'
                 ],
-                'body' => json_encode($data),
+                'json' => $data,
             ]
         );
-        return new JsonResponse(array('test'=>$response));
+        return new JsonResponse($response->getContent());
 
     }
 
