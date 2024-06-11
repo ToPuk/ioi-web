@@ -81,6 +81,14 @@ class AnnouncementController extends AbstractController
 
 
     /**
+     * @Route("/notly", name="test_notly", methods={"GET"})
+     */
+    public function testNotly(): Response{
+
+        return new JsonResponse(array('test'=>'test'));
+    }
+
+    /**
      * @Route("/send_email", name="send_email", methods={"GET"})
      */
     public function sendEmail(MailerInterface $mailer): Response{
