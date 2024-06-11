@@ -98,7 +98,7 @@ class AnnouncementController extends AbstractController
                 'json' => $data,
             ]
         );
-        return new JsonResponse($response->getContent());
+        return new JsonResponse(['result' => $response->getContent()]);
 
     }
 
