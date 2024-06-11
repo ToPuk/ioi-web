@@ -88,22 +88,17 @@ class AnnouncementController extends AbstractController
     public function testNotly(HttpClientInterface $client): Response{
 
         $data = [ "cert_number" => "8202400017"];
-        $response = '';
-        try {
-            $response = $client->request('POST',
-                'https://certify.mn/service/api/v2/certification/qr/generate',
-                [
-                    'headers' => [
-                        'Content-Type' => 'application/json',
-                        'x-api-key' => 'nh7kMUYU.AR3cnUGJFeDjWNMpIo4bxEP1s8IUjgx0'
-                    ],
-                    'json' => $data,
-                ]
-            );
-            return new JsonResponse(array('test'=>$response));
-        } catch (TransportExceptionInterface $e) {
-            return new JsonResponse(array('error'=>'500'));
-        }
+        $response = $client->request('POST',
+            'https://certify.mn/service/api/v2/certification/qr/generate',
+            [
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'x-api-key' => 'nh7kMUYU.AR3cnUGJFeDjWNMpIo4bxEP1s8IUjgx0'
+                ],
+                'body' => json_encode($data),
+            ]
+        );
+        return new JsonResponse(array('test'=>$response));
 
     }
 
