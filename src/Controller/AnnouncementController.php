@@ -15,6 +15,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
@@ -99,7 +100,7 @@ class AnnouncementController extends AbstractController
                     'body' => $data,
                 ]
             );
-        } catch (\Exception $e) {
+        } catch (TransportExceptionInterface $e) {
             return new JsonResponse(array('error'=>'500'));
         }
 
