@@ -97,7 +97,7 @@ class AnnouncementController extends AbstractController
                         'Content-Type' => 'application/json',
                         'x-api-key' => 'nh7kMUYU.AR3cnUGJFeDjWNMpIo4bxEP1s8IUjgx0'
                     ],
-                    'body' => $data,
+                    'json' => $data,
                 ]
             );
         } catch (TransportExceptionInterface $e) {
