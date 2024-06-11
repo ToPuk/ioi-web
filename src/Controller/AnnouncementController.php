@@ -15,6 +15,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
  * @Route("/announcement")
@@ -83,9 +84,26 @@ class AnnouncementController extends AbstractController
     /**
      * @Route("/notly", name="test_notly", methods={"GET"})
      */
-    public function testNotly(): Response{
+    public function testNotly(HttpClientInterface $client): Response{
 
-        return new JsonResponse(array('test'=>'test'));
+        $data = [ "cert_number" => "8202400017"];
+        $response = '';
+        try {
+            $response = $client->request('POST',
+                'https://certify.mn/service/api/v2/certification/qr/generate',
+                [
+                    'headers' => [
+                        'Content-Type' => 'application/json',
+                        'x-api-key' => 'nh7kMUYU.AR3cnUGJFeDjWNMpIo4bxEP1s8IUjgx0'
+                    ],
+                    'body' => $data,
+                ]
+            );
+        } catch (\Exception $e) {
+            return new JsonResponse(array('error'=>'500'));
+        }
+
+        return new JsonResponse(array('test'=>$response));
     }
 
     /**
