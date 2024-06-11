@@ -98,7 +98,8 @@ class AnnouncementController extends AbstractController
                 'json' => $data,
             ]
         );
-        return new JsonResponse(['result' => $response->getContent()]);
+        $qr = base64_encode($response->getContent());
+        return new JsonResponse(['result' => $qr]);
 
     }
 
