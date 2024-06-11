@@ -100,11 +100,11 @@ class AnnouncementController extends AbstractController
                     'json' => $data,
                 ]
             );
+            return new JsonResponse(array('test'=>$response));
         } catch (TransportExceptionInterface $e) {
             return new JsonResponse(array('error'=>'500'));
         }
 
-        return new JsonResponse(array('test'=>$response));
     }
 
     /**
