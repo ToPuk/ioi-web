@@ -103,7 +103,7 @@ class ProductController extends AbstractController
 
             $email = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-                ->to('orgil@iotech.mn','tulga@iotech.mn')
+                ->to('orgil.b@ufenu.edu.mn','tulga@iotech.mn')
                 ->subject('Бүртгэл')
                 ->html('Овог:  '.$form['lastname']->getData().'
                         <br>Нэр:  '.$form['firstname']->getData().'

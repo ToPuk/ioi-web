@@ -91,7 +91,7 @@ class RegistrationController extends AbstractController
         //        exit();
         $email = (new TemplatedEmail())
             ->from(new Address('admin@ioi.mn', 'test'))
-            ->to('orgil@iotech.mn')
+            ->to('orgil.b@ufenu.edu.mn')
             ->subject('test')
             ->htmlTemplate('emails/result_general_request.html.twig')
             ->context([
@@ -169,7 +169,7 @@ class RegistrationController extends AbstractController
 
             $email = (new TemplatedEmail())
                 ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-                ->to('orgil@iotech.mn')
+                ->to('orgil.b@ufenu.edu.mn')
                 ->subject('Бүртгэл')
                 ->html('Овог:  ' . $form['lastname']->getData() . '
                         <br>Нэр:  ' . $form['firstname']->getData() . '
