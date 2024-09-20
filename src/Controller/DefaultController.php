@@ -268,7 +268,7 @@ class DefaultController extends AbstractController
 
                 $email = (new TemplatedEmail())
                     ->from(new Address('admin@ioi.mn', 'iO Institute NGO'))
-                    ->to('orgil@iotech.mn')
+                    ->to('orgil.b@ufenu.edu.mn')
                     ->subject('Бүртгэл')
                     ->html($payment->getDescription() . '
                 хэрэглэгчийн ' . $invoice->getAmount() . '₮-ийн төлбөр амжилттай төлөгдлөө.');
